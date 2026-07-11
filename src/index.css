@@ -35,3 +35,10 @@ body {
   background: #b3946a;
 }
 
+/* Partner logo card shimmer */
+@keyframes shimmer-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+
