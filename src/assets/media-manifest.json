@@ -1,0 +1,832 @@
+{
+  "images": [
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/09/RH-WS-CENTERED-collection.jpg",
+      "file": "images/2020__09__RH-WS-CENTERED-collection.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/09/Royal-Logo-EN-1-e1599237111368.png",
+      "file": "images/2020__09__Royal-Logo-EN-1-e1599237111368.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/09/TBV-33EDIT-uai-2048x682.jpg",
+      "file": "images/2020__09__TBV-33EDIT-uai-2048x682.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/09/TBV-33EDIT.jpg",
+      "file": "images/2020__09__TBV-33EDIT.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/09/cropped-RH-favico-270x270.png",
+      "file": "images/2020__09__cropped-RH-favico-270x270.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Catering-from-the-seed.jpg",
+      "file": "images/2020__10__Catering-from-the-seed.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Committed-to-our-community.jpg",
+      "file": "images/2020__10__Committed-to-our-community.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Committed-to-our-environment.jpg",
+      "file": "images/2020__10__Committed-to-our-environment.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/EGAC.png",
+      "file": "images/2020__10__EGAC.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Employee7.jpg",
+      "file": "images/2020__10__Employee7.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Halal-.png",
+      "file": "images/2020__10__Halal-.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/JAS.png",
+      "file": "images/2020__10__JAS.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Mabagrown.png",
+      "file": "images/2020__10__Mabagrown.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Naturland.png",
+      "file": "images/2020__10__Naturland.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Rainforest-.png",
+      "file": "images/2020__10__Rainforest-.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Royal-Blends.jpg",
+      "file": "images/2020__10__Royal-Blends.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Royal-Classic-uai-1600x1600.jpg",
+      "file": "images/2020__10__Royal-Classic-uai-1600x1600.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Royal-Classic.jpg",
+      "file": "images/2020__10__Royal-Classic.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Royal-Health.jpg",
+      "file": "images/2020__10__Royal-Health.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/SUSTAINABILITY-GOAl-4-1.jpg",
+      "file": "images/2020__10__SUSTAINABILITY-GOAl-4-1.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/SUSTAINABLY-GOAl-1-scaled.jpg",
+      "file": "images/2020__10__SUSTAINABLY-GOAl-1-scaled.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/USDA.png",
+      "file": "images/2020__10__USDA.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/11/Our-Responsibility-goal-2.jpg",
+      "file": "images/2020__11__Our-Responsibility-goal-2.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/57357.png",
+      "file": "images/2020__12__57357.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/ACDA.png",
+      "file": "images/2020__12__ACDA.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Anise-20-3D-uai-1348x1348.png",
+      "file": "images/2020__12__Anise-20-3D-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Anise-20-3D.png",
+      "file": "images/2020__12__Anise-20-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Apple-cider-20-3D-uai-1390x1390.png",
+      "file": "images/2020__12__Apple-cider-20-3D-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Apple-cider-20-3D.png",
+      "file": "images/2020__12__Apple-cider-20-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/BAHEYA.png",
+      "file": "images/2020__12__BAHEYA.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Caraway-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Caraway-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Caraway-20-3D-1.png",
+      "file": "images/2020__12__Caraway-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Chamomile-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Chamomile-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Chamomile-20-3D-1.png",
+      "file": "images/2020__12__Chamomile-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Chamomile-Mint-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Chamomile-Mint-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Chamomile-Mint-20-3D-1.png",
+      "file": "images/2020__12__Chamomile-Mint-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Chamomile-with-anisee-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Chamomile-with-anisee-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Chamomile-with-anisee-20-3D-1.png",
+      "file": "images/2020__12__Chamomile-with-anisee-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Cinammon-20-3D-1-uai-1390x1390.png",
+      "file": "images/2020__12__Cinammon-20-3D-1-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Cinammon-20-3D-1.png",
+      "file": "images/2020__12__Cinammon-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Cinnamon-Ginger-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Cinnamon-Ginger-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Cinnamon-Ginger-20-3D-1.png",
+      "file": "images/2020__12__Cinnamon-Ginger-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Cumin-Lemon-20-3D-1-uai-1390x1390.png",
+      "file": "images/2020__12__Cumin-Lemon-20-3D-1-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Cumin-Lemon-20-3D-1.png",
+      "file": "images/2020__12__Cumin-Lemon-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Ginger-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Ginger-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Ginger-20-3D-1.png",
+      "file": "images/2020__12__Ginger-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Hibiscus-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Hibiscus-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Hibiscus-20-3D-1.png",
+      "file": "images/2020__12__Hibiscus-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Hibiscus-Cinnamon-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Hibiscus-Cinnamon-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Hibiscus-Cinnamon-20-3D-1.png",
+      "file": "images/2020__12__Hibiscus-Cinnamon-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/JEREED.png",
+      "file": "images/2020__12__JEREED.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lemon-20-3D-uai-1390x1390.png",
+      "file": "images/2020__12__Lemon-20-3D-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lemon-20-3D.png",
+      "file": "images/2020__12__Lemon-20-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lemon-Ginger-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Lemon-Ginger-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lemon-Ginger-20-3D-1.png",
+      "file": "images/2020__12__Lemon-Ginger-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Breathe-3D-uai-1343x1343.png",
+      "file": "images/2020__12__Lifestyle-Breathe-3D-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Breathe-3D.png",
+      "file": "images/2020__12__Lifestyle-Breathe-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Calm-3D-uai-1343x1343.jpg",
+      "file": "images/2020__12__Lifestyle-Calm-3D-uai-1343x1343.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Calm-3D-uai-1343x1343.png",
+      "file": "images/2020__12__Lifestyle-Calm-3D-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Calm-3D.jpg",
+      "file": "images/2020__12__Lifestyle-Calm-3D.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Calm-3D.png",
+      "file": "images/2020__12__Lifestyle-Calm-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Detox-3D-uai-1343x1343.png",
+      "file": "images/2020__12__Lifestyle-Detox-3D-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Detox-3D.png",
+      "file": "images/2020__12__Lifestyle-Detox-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Dream-3D-uai-1343x1343.png",
+      "file": "images/2020__12__Lifestyle-Dream-3D-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Dream-3D.png",
+      "file": "images/2020__12__Lifestyle-Dream-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Enegize-3D-uai-1343x1343.png",
+      "file": "images/2020__12__Lifestyle-Enegize-3D-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Enegize-3D.png",
+      "file": "images/2020__12__Lifestyle-Enegize-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Lighten-3D-uai-1343x1343.png",
+      "file": "images/2020__12__Lifestyle-Lighten-3D-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Lifestyle-Lighten-3D.png",
+      "file": "images/2020__12__Lifestyle-Lighten-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Marjoram-20-3D-1-uai-1390x1390.png",
+      "file": "images/2020__12__Marjoram-20-3D-1-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Marjoram-20-3D-1.png",
+      "file": "images/2020__12__Marjoram-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Peppermint-50-3D-1-2048x1204.png",
+      "file": "images/2020__12__Peppermint-50-3D-1-2048x1204.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Peppermint-50-3D-1-scaled-uai-1505x1505.png",
+      "file": "images/2020__12__Peppermint-50-3D-1-scaled-uai-1505x1505.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Peppermint-50-3D-1-scaled.png",
+      "file": "images/2020__12__Peppermint-50-3D-1-scaled.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/REFORM.png",
+      "file": "images/2020__12__REFORM.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Regime_50-3D-2048x1181.png",
+      "file": "images/2020__12__Regime_50-3D-2048x1181.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Regime_50-3D-scaled-uai-1476x1476.png",
+      "file": "images/2020__12__Regime_50-3D-scaled-uai-1476x1476.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Regime_50-3D-scaled.png",
+      "file": "images/2020__12__Regime_50-3D-scaled.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royabetes-3D-1-uai-1110x1110.jpg",
+      "file": "images/2020__12__Royabetes-3D-1-uai-1110x1110.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royabetes-3D-1.jpg",
+      "file": "images/2020__12__Royabetes-3D-1.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royal-Green-Tea-with-mint-25-3D-uai-1201x1201.png",
+      "file": "images/2020__12__Royal-Green-Tea-with-mint-25-3D-uai-1201x1201.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royal-Green-Tea-with-mint-25-3D.png",
+      "file": "images/2020__12__Royal-Green-Tea-with-mint-25-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royal-Sage-20-3D-uai-1390x1390.png",
+      "file": "images/2020__12__Royal-Sage-20-3D-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royal-Sage-20-3D.png",
+      "file": "images/2020__12__Royal-Sage-20-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royalact-3D-uai-1110x1110.jpg",
+      "file": "images/2020__12__Royalact-3D-uai-1110x1110.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royalact-3D.jpg",
+      "file": "images/2020__12__Royalact-3D.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royapetro-3D-uai-1110x1110.jpg",
+      "file": "images/2020__12__Royapetro-3D-uai-1110x1110.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royapetro-3D.jpg",
+      "file": "images/2020__12__Royapetro-3D.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royatens-3D-1-uai-1110x1110.jpg",
+      "file": "images/2020__12__Royatens-3D-1-uai-1110x1110.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Royatens-3D-1.jpg",
+      "file": "images/2020__12__Royatens-3D-1.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/SYMBIOS.png",
+      "file": "images/2020__12__SYMBIOS.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/TAGADDOD.png",
+      "file": "images/2020__12__TAGADDOD.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/TMFoundation.png",
+      "file": "images/2020__12__TMFoundation.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Thyme-20-3D-uai-1390x1390.png",
+      "file": "images/2020__12__Thyme-20-3D-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Thyme-20-3D.png",
+      "file": "images/2020__12__Thyme-20-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Tilia-20-3D-1-uai-1348x1348.png",
+      "file": "images/2020__12__Tilia-20-3D-1-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Tilia-20-3D-1.png",
+      "file": "images/2020__12__Tilia-20-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/URBANgreen.png",
+      "file": "images/2020__12__URBANgreen.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/WAYA.png",
+      "file": "images/2020__12__WAYA.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Zhorat-shamya-20-3D-uai-1390x1390.png",
+      "file": "images/2020__12__Zhorat-shamya-20-3D-uai-1390x1390.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/Zhorat-shamya-20-3D.png",
+      "file": "images/2020__12__Zhorat-shamya-20-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/aeco.png",
+      "file": "images/2020__12__aeco.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/econsult.png",
+      "file": "images/2020__12__econsult.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/12/masader.png",
+      "file": "images/2020__12__masader.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2021/01/Royal-Green-Tea-25-3D-1-uai-1180x1180.png",
+      "file": "images/2021__01__Royal-Green-Tea-25-3D-1-uai-1180x1180.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2021/01/Royal-Green-Tea-25-3D-1.png",
+      "file": "images/2021__01__Royal-Green-Tea-25-3D-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2021/12/CERES-CERTIFIED_Fastellipse2-01.png",
+      "file": "images/2021__12__CERES-CERTIFIED_Fastellipse2-01.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2021/12/EU_organic_farming_logo_en-02.png",
+      "file": "images/2021__12__EU_organic_farming_logo_en-02.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2022/04/GREEN-RETREAT-2048x1280-02.jpg",
+      "file": "images/2022__04__GREEN-RETREAT-2048x1280-02.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2022/04/Green-Tea-25-1-uai-2560x1440-02.jpg",
+      "file": "images/2022__04__Green-Tea-25-1-uai-2560x1440-02.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2022/04/Green-Tea-Mint-25-1-uai-2560x1440-02.jpg",
+      "file": "images/2022__04__Green-Tea-Mint-25-1-uai-2560x1440-02.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2023/03/Tamr-Pic2.jpg",
+      "file": "images/2023__03__Tamr-Pic2.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2023/03/WhatsApp-Image-2025-12-04-at-1.26.58-PM-uai-1114x1114.jpeg",
+      "file": "images/2023__03__WhatsApp-Image-2025-12-04-at-1.26.58-PM-uai-1114x1114.jpeg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2023/03/WhatsApp-Image-2025-12-04-at-1.26.58-PM.jpeg",
+      "file": "images/2023__03__WhatsApp-Image-2025-12-04-at-1.26.58-PM.jpeg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2023/11/002-uai-1343x1343.png",
+      "file": "images/2023__11__002-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2023/11/002.png",
+      "file": "images/2023__11__002.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2023/11/003.png",
+      "file": "images/2023__11__003.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2023/11/005.png",
+      "file": "images/2023__11__005.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/001-uai-1343x1343.png",
+      "file": "images/2024__01__001-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/001.png",
+      "file": "images/2024__01__001.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/002-uai-1343x1343.png",
+      "file": "images/2024__01__002-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/002.png",
+      "file": "images/2024__01__002.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/003-uai-1343x1343.png",
+      "file": "images/2024__01__003-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/003.png",
+      "file": "images/2024__01__003.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/004-uai-1343x1343.png",
+      "file": "images/2024__01__004-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/004.png",
+      "file": "images/2024__01__004.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/005-uai-1343x1343.png",
+      "file": "images/2024__01__005-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/005.png",
+      "file": "images/2024__01__005.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/006-2-uai-1343x1343.png",
+      "file": "images/2024__01__006-2-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/006-2.png",
+      "file": "images/2024__01__006-2.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/007-1-uai-1343x1343.png",
+      "file": "images/2024__01__007-1-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/007-1.png",
+      "file": "images/2024__01__007-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/007-uai-1343x1343.png",
+      "file": "images/2024__01__007-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/007.png",
+      "file": "images/2024__01__007.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/008-1-uai-1343x1343.png",
+      "file": "images/2024__01__008-1-uai-1343x1343.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/01/008-1.png",
+      "file": "images/2024__01__008-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Cinnamon_25-3D-1-2048x1356.jpg",
+      "file": "images/2024__02__Regime_Cinnamon_25-3D-1-2048x1356.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Cinnamon_25-3D-1-scaled-uai-1695x1695.jpg",
+      "file": "images/2024__02__Regime_Cinnamon_25-3D-1-scaled-uai-1695x1695.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Cinnamon_25-3D-1-scaled.jpg",
+      "file": "images/2024__02__Regime_Cinnamon_25-3D-1-scaled.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Mint_25-Maisa-3D-2048x1356.jpg",
+      "file": "images/2024__02__Regime_Mint_25-Maisa-3D-2048x1356.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Mint_25-Maisa-3D-scaled-uai-1695x1695.jpg",
+      "file": "images/2024__02__Regime_Mint_25-Maisa-3D-scaled-uai-1695x1695.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Mint_25-Maisa-3D-scaled.jpg",
+      "file": "images/2024__02__Regime_Mint_25-Maisa-3D-scaled.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Peach-_25-3D-1-2048x1356.png",
+      "file": "images/2024__02__Regime_Peach-_25-3D-1-2048x1356.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Peach-_25-3D-1-scaled-uai-1695x1695.png",
+      "file": "images/2024__02__Regime_Peach-_25-3D-1-scaled-uai-1695x1695.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/02/Regime_Peach-_25-3D-1-scaled.png",
+      "file": "images/2024__02__Regime_Peach-_25-3D-1-scaled.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/09/1-1.png",
+      "file": "images/2024__09__1-1.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/09/125G_Blackseed-honey-front-3.jpg",
+      "file": "images/2024__09__125G_Blackseed-honey-front-3.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/09/225G_Marjoram-honey_Front-2.jpg",
+      "file": "images/2024__09__225G_Marjoram-honey_Front-2.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/09/3.png",
+      "file": "images/2024__09__3.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/09/4.png",
+      "file": "images/2024__09__4.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2024/09/450G_citrus-blossom-honey_Front-4.jpg",
+      "file": "images/2024__09__450G_citrus-blossom-honey_Front-4.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/02/Royatens-3D_0000_Layer-3.jpg",
+      "file": "images/2025__02__Royatens-3D_0000_Layer-3.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/02/Royatens-3D_0001_Layer-2.jpg",
+      "file": "images/2025__02__Royatens-3D_0001_Layer-2.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/02/Royatens-3D_0002_Layer-1.jpg",
+      "file": "images/2025__02__Royatens-3D_0002_Layer-1.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/02/Royatens-3D_0003_Layer-0.jpg",
+      "file": "images/2025__02__Royatens-3D_0003_Layer-0.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/16bf38e8-ddae-438e-ab70-51b65c9d40ef-uai-1135x1135.jpg",
+      "file": "images/2025__05__16bf38e8-ddae-438e-ab70-51b65c9d40ef-uai-1135x1135.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/16bf38e8-ddae-438e-ab70-51b65c9d40ef.jpg",
+      "file": "images/2025__05__16bf38e8-ddae-438e-ab70-51b65c9d40ef.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/Parsley-Celery-20-uai-1348x1348.png",
+      "file": "images/2025__05__Parsley-Celery-20-uai-1348x1348.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/Parsley-Celery-20.png",
+      "file": "images/2025__05__Parsley-Celery-20.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/Parsley-Celery-50-50-3D-uai-1618x1618.png",
+      "file": "images/2025__05__Parsley-Celery-50-50-3D-uai-1618x1618.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/Parsley-Celery-50-50-3D.png",
+      "file": "images/2025__05__Parsley-Celery-50-50-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/Royal-Parsley-Celery-12-3D-uai-1500x1500.png",
+      "file": "images/2025__05__Royal-Parsley-Celery-12-3D-uai-1500x1500.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/05/Royal-Parsley-Celery-12-3D.png",
+      "file": "images/2025__05__Royal-Parsley-Celery-12-3D.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/06/Royal-Parsley-Celery-20Bags-3D-1-Photoroom.png",
+      "file": "images/2025__06__Royal-Parsley-Celery-20Bags-3D-1-Photoroom.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/12/Royal-Lax-Tea-3D-uai-1040x1040.jpg",
+      "file": "images/2025__12__Royal-Lax-Tea-3D-uai-1040x1040.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/12/Royal-Lax-Tea-3D.jpg",
+      "file": "images/2025__12__Royal-Lax-Tea-3D.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/12/Royal_Lax_Tea_25-3D-2048x1278.jpg",
+      "file": "images/2025__12__Royal_Lax_Tea_25-3D-2048x1278.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/12/Royal_Lax_Tea_25-3D-scaled-uai-1597x1597.jpg",
+      "file": "images/2025__12__Royal_Lax_Tea_25-3D-scaled-uai-1597x1597.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2025/12/Royal_Lax_Tea_25-3D-scaled.jpg",
+      "file": "images/2025__12__Royal_Lax_Tea_25-3D-scaled.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/%D9%87%D9%8A%D8%A6%D8%A9-%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D8%A1-e1659481262102.jpeg",
+      "file": "images/2026__04__%D9%87%D9%8A%D8%A6%D8%A9-%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D8%A1-e1659481262102.jpeg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/1000_F_226534569_GtBMdkpIqQCtxJlFsh4GIRUORjmaL7OR.jpg",
+      "file": "images/2026__04__1000_F_226534569_GtBMdkpIqQCtxJlFsh4GIRUORjmaL7OR.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/20231002161427922.jpg",
+      "file": "images/2026__04__20231002161427922.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/ASTA_20424.jpg",
+      "file": "images/2026__04__ASTA_20424.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/Certified-GMP-Logo-PNG-Transparent-Image.png",
+      "file": "images/2026__04__Certified-GMP-Logo-PNG-Transparent-Image.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/ESA-spice.webp",
+      "file": "images/2026__04__ESA-spice.webp"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/Konsultan-ISO-22000.png",
+      "file": "images/2026__04__Konsultan-ISO-22000.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/MB_Logo_RGB-2048x353.jpg",
+      "file": "images/2026__04__MB_Logo_RGB-2048x353.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/MB_Logo_RGB-scaled.jpg",
+      "file": "images/2026__04__MB_Logo_RGB-scaled.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/Mabagrown.png",
+      "file": "images/2026__04__Mabagrown.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/Sedex_Logo_RGB_Pos-2048x562.png",
+      "file": "images/2026__04__Sedex_Logo_RGB_Pos-2048x562.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/Sedex_Logo_RGB_Pos-scaled.png",
+      "file": "images/2026__04__Sedex_Logo_RGB_Pos-scaled.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/canada-organic-logo-png_seeklogo-223201.png",
+      "file": "images/2026__04__canada-organic-logo-png_seeklogo-223201.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/csm_eu-logo_269c3dd5dd-e1777189450111.jpg",
+      "file": "images/2026__04__csm_eu-logo_269c3dd5dd-e1777189450111.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/f31e992b-5a58-4120-97d1-14b2d0e6ca85./CR00300225_PT0_SX300_V1/_.jpg",
+      "file": "images/2026__04__f31e992b-5a58-4120-97d1-14b2d0e6ca85.__CR00300225_PT0_SX300_V1___.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/fda-logo.jpg",
+      "file": "images/2026__04__fda-logo.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/index-2.png",
+      "file": "images/2026__04__index-2.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/iso-9001-2015-logo_logoshape.png",
+      "file": "images/2026__04__iso-9001-2015-logo_logoshape.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/logo_CERES.png",
+      "file": "images/2026__04__logo_CERES.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/logos.jpg",
+      "file": "images/2026__04__logos.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/new-fssc-22000-logo-sito.png",
+      "file": "images/2026__04__new-fssc-22000-logo-sito.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/pngtree-iso-14001-certified-company-logo-badge-png-image_8540372.png",
+      "file": "images/2026__04__pngtree-iso-14001-certified-company-logo-badge-png-image_8540372.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/rainforest-alliance-logo-png_seeklogo-493250.png",
+      "file": "images/2026__04__rainforest-alliance-logo-png_seeklogo-493250.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2026/04/usda-organic-logo.png",
+      "file": "images/2026__04__usda-organic-logo.png"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/apothecary_herbal_tea_1783414891707.jpg",
+      "file": "images/apothecary_herbal_tea_1783414891707.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/artisan_tea_flatlay_1783411234222.jpg",
+      "file": "images/artisan_tea_flatlay_1783411234222.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/chamomile_irrigation_field_1783414904690.jpg",
+      "file": "images/chamomile_irrigation_field_1783414904690.jpg"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/farms_story_banner_1783414876355.jpg",
+      "file": "images/farms_story_banner_1783414876355.jpg"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/09/Bahareya-Village-Compressed.mp4",
+      "file": "videos/2020__09__Bahareya-Village-Compressed.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/09/our-farms-Intro-com.mp4",
+      "file": "videos/2020__09__our-farms-Intro-com.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Careers-Compressed.mp4",
+      "file": "videos/2020__10__Careers-Compressed.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Contact-Us-Cropped.mp4",
+      "file": "videos/2020__10__Contact-Us-Cropped.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Great-people-of-Assyut-Compressed.mp4",
+      "file": "videos/2020__10__Great-people-of-Assyut-Compressed.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/Honeycomb-Compressed.mp4",
+      "file": "videos/2020__10__Honeycomb-Compressed.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2020/10/WAREHOUSE-OF-MEDICINES-Compressed.mp4",
+      "file": "videos/2020__10__WAREHOUSE-OF-MEDICINES-Compressed.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2021/11/Counter_BG.mp4",
+      "file": "videos/2021__11__Counter_BG.mp4"
+    },
+    {
+      "url": "https://royalherbs.com/wp-content/uploads/2022/02/Home-Intro-Compressed.mp4",
+      "file": "videos/2022__02__Home-Intro-Compressed.mp4"
+    }
+  ],
+  "scrapedAt": "2026-07-07T11:52:56.713Z",
+  "source": "https://royalherbs.com/"
+}

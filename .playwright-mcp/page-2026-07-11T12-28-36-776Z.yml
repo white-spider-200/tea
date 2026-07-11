@@ -1,0 +1,107 @@
+- generic [ref=f8e3]:
+  - banner [ref=f8e4]:
+    - generic [ref=f8e5]:
+      - navigation [ref=f8e7]:
+        - button "تسوّق الشاي" [ref=f8e8] [cursor=pointer]
+        - button "مزارعنا" [ref=f8e9] [cursor=pointer]
+        - button "مسئوليتنا" [ref=f8e10] [cursor=pointer]
+        - button "اتصل بنا" [ref=f8e11] [cursor=pointer]
+      - img "رويال هيربس - تأسس ١٩٨٥" [ref=f8e14] [cursor=pointer]
+      - button "السلة (0)" [ref=f8e17] [cursor=pointer]
+  - generic [ref=f8e18]:
+    - img "Artisan Tea Flatlay background" [ref=f8e20]
+    - main [ref=f8e23]:
+      - generic [ref=f8e24]:
+        - heading "الترقية المثالية لكوب الشاي اليومي" [level=1] [ref=f8e25]
+        - paragraph [ref=f8e26]: شاي يدوي حرفي حائز على جوائز. أكياس شاي قابلة للتحلل وخالية من البلاستيك وأوراق شاي سائبة مصنوعة ليومك.
+        - button "تسوّق الشاي" [ref=f8e28] [cursor=pointer]
+  - generic [ref=f8e29]:
+    - generic [ref=f8e30]:
+      - generic [ref=f8e35]: تـشـكـيـلـة الـشـاي الـمـلـكـي
+      - heading "منتجات فريدة *" [level=2] [ref=f8e36]:
+        - generic [ref=f8e37]: منتجات فريدة
+        - generic [ref=f8e38]: "*"
+      - paragraph [ref=f8e39]: اكتشف تشكيلة علب الشاي العشبي الفاخرة، المصممة خصيصاً بمكونات برية طبيعية لدعم عافيتك وصحتك البدنية.
+    - generic [ref=f8e40]:
+      - generic:
+        - generic:
+          - heading "شاي ريجيم" [level=3]
+      - generic [ref=f8e41]:
+        - button "Previous product" [ref=f8e42] [cursor=pointer]
+        - img "شاي ريجيم الملكي" [ref=f8e49]
+        - button "Next product" [ref=f8e50] [cursor=pointer]
+      - generic [ref=f8e54]:
+        - heading "شاي ريجيم الملكي" [level=4] [ref=f8e55]
+        - paragraph [ref=f8e56]: منقوع عشبي ملكي عضوي للمساعدة على تخفيف الوزن، محضر بعناية من أجود الأعشاب البرية ونباتات البحر الأبيض المتوسط.
+  - generic [ref=f8e58]:
+    - generic [ref=f8e59]:
+      - paragraph [ref=f8e60]: شركاؤنا والشهادات
+      - heading "الشركات التي نتعاون معها" [level=2] [ref=f8e61]
+      - paragraph [ref=f8e64]: نفخر بالتعاون مع أبرز المؤسسات والجهات المعتمدة عالمياً في مجال الجودة والاستدامة.
+    - generic [ref=f8e65]:
+      - generic [ref=f8e66]:
+        - img "هيئة الدواء المصرية"
+        - generic: هيئة الدواء المصرية
+      - generic [ref=f8e67]:
+        - img "جمعية التجارة الأمريكية للتوابل"
+        - generic: جمعية التجارة الأمريكية للتوابل
+      - generic [ref=f8e68]:
+        - img "كندا العضوي"
+        - generic: كندا العضوي
+      - generic [ref=f8e69]:
+        - img "شهادة CERES"
+        - generic: شهادة CERES
+      - generic [ref=f8e70]:
+        - img "جمعية التوابل الأوروبية"
+        - generic: جمعية التوابل الأوروبية
+      - generic [ref=f8e71]:
+        - img "الاتحاد الأوروبي العضوي"
+        - generic: الاتحاد الأوروبي العضوي
+      - generic [ref=f8e72]:
+        - img "إدارة الغذاء والدواء الأمريكية"
+        - generic: إدارة الغذاء والدواء الأمريكية
+      - generic [ref=f8e73]:
+        - img "FSSC 22000"
+        - generic: FSSC 22000
+      - generic [ref=f8e74]:
+        - img "شهادة GMP"
+        - generic: شهادة GMP
+      - generic [ref=f8e75]:
+        - img "حلال معتمد"
+        - generic: حلال معتمد
+      - generic [ref=f8e76]:
+        - img "ISO 14001"
+        - generic: ISO 14001
+      - generic [ref=f8e77]:
+        - img "ISO 22000"
+        - generic: ISO 22000
+      - generic [ref=f8e78]:
+        - img "ISO 9001:2015"
+        - generic: ISO 9001:2015
+      - generic [ref=f8e79]:
+        - img "JAS العضوي"
+        - generic: JAS العضوي
+      - generic [ref=f8e80]:
+        - img "كوشر معتمد"
+        - generic: كوشر معتمد
+      - generic [ref=f8e81]:
+        - img "mabagrown"
+        - generic: mabagrown
+      - generic [ref=f8e82]:
+        - img "مجموعة مارتن باور"
+        - generic: مجموعة مارتن باور
+      - generic [ref=f8e83]:
+        - img "ناتورلاند"
+        - generic: ناتورلاند
+      - generic [ref=f8e84]:
+        - img "شريك"
+        - generic: شريك
+      - generic [ref=f8e85]:
+        - img "تحالف الغابات المطيرة"
+        - generic: تحالف الغابات المطيرة
+      - generic [ref=f8e86]:
+        - img "سيدكس"
+        - generic: سيدكس
+      - generic [ref=f8e87]:
+        - img "USDA العضوي"
+        - generic: USDA العضوي

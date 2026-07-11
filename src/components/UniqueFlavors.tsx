@@ -34,6 +34,7 @@ interface BoxProduct {
   subTitleArabic: string;
   bottomTextEnglish: string;
   bottomTextArabic: string;
+  boxImage?: string;
 }
 
 const BOX_PRODUCTS: BoxProduct[] = [
@@ -58,30 +59,32 @@ const BOX_PRODUCTS: BoxProduct[] = [
     subTitleEnglish: 'Weight Reducing Herbs',
     subTitleArabic: 'أعشاب لتخفيف الوزن',
     bottomTextEnglish: 'NATURAL HERBAL TEA ... NO CAFFEINE',
-    bottomTextArabic: 'شاي عشبي طبيعي ... خالٍ من الكافيين'
+    bottomTextArabic: 'شاي عشبي طبيعي ... خالٍ من الكافيين',
+    boxImage: '/src/assets/images/2024__02__Regime_Royal_Tea-front.png',
   },
   {
-    id: 'royal-wellness',
-    name: 'Royal Wellness Infusion',
-    nameAr: 'شاي العافية الملكي',
-    bgText: 'Royal Wellness',
-    bgTextAr: 'شاي العافية',
-    description: 'A deeply soothing chamomile and lavender organic blend designed for ultimate stress relief and cellular restoration.',
-    descriptionAr: 'مزيج عضوي مهدئ للغاية من أزهار البابونج الذهبية والخزامى العطرة لراحة عميقة واستعادة النشاط الحيوي.',
+    id: 'royal-evening',
+    name: 'Royal Evening Tea - Chamomile',
+    nameAr: 'شاي المساء الملكي - البابونج',
+    bgText: 'Royal Evening',
+    bgTextAr: 'شاي المساء',
+    description: 'A calming chamomile herbal tea to help you relax and unwind. Promotes restful sleep naturally with no caffeine.',
+    descriptionAr: 'شاي أعشاب البابونج المهدئ للاسترخاء والراحة. يعزز النوم الهادئ بشكل طبيعي وخالٍ من الكافيين.',
     boxBgColor: 'from-indigo-50/40 via-white to-purple-50/30',
     bannerColor: '#4a148c', // Deep purple
     teapotColor: '#311b92', // Rich royal blue-purple
     leafColor: '#a855f7', // Purple/Lavender hue
-    badgeText: 'ORGANIC',
-    badgeTextAr: 'عضوي',
+    badgeText: 'NEW',
+    badgeTextAr: 'جديد',
     badgeCountText: '50 TEA BAGS',
     badgeCountTextAr: '٥٠ كيس شاي',
-    titleEnglish: 'Royal Wellness',
-    titleArabic: 'شاي العافية',
-    subTitleEnglish: 'Comforting & Soothing Herbs',
-    subTitleArabic: 'أعشاب مهدئة ومريحة',
-    bottomTextEnglish: '100% ORGANIC INFUSION ... CAFFEINE FREE',
-    bottomTextArabic: 'مزيج عضوي ١٠٠٪ ... خالٍ من الكافيين'
+    titleEnglish: 'Royal Evening Tea',
+    titleArabic: 'شاي المساء الملكي',
+    subTitleEnglish: 'Chamomile - Relax & Unwind',
+    subTitleArabic: 'البابونج - استرخاء وراحة',
+    bottomTextEnglish: 'NATURAL HERBAL TEA - NO CAFFEINE',
+    bottomTextArabic: 'شاي عشبي طبيعي - خالٍ من الكافيين',
+    boxImage: '/src/assets/images/2024__02__Royal_Evening_Tea_Chamomile.png'
   }
 ];
 
@@ -123,9 +126,31 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
   };
 
   const activeProduct = BOX_PRODUCTS[activeIndex];
+  const boxFrameClass =
+    'relative select-none w-[340px] md:w-[480px] aspect-[656/438] transition-transform duration-500';
 
-  // Render a highly authentic, realistic CSS cardboard box of the herbal tea bags
+  // Render product box — real image when available, otherwise CSS/SVG fallback
   const renderPremiumBox = (product: BoxProduct) => {
+    if (product.boxImage) {
+      return (
+        <div
+          className={`${boxFrameClass} overflow-hidden rounded-lg shadow-[0_28px_60px_rgba(0,0,0,0.42)] [transform-style:preserve-3d] border border-white/40`}
+          style={{ transform: 'translateZ(24px)' }}
+        >
+          <img
+            src={product.boxImage}
+            alt={isAr ? product.nameAr : product.name}
+            className="absolute inset-0 w-full h-full object-contain object-center"
+            referrerPolicy="no-referrer"
+            draggable={false}
+          />
+          {/* Top-edge light for 3D depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-black/10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-black/10 to-transparent pointer-events-none" />
+        </div>
+      );
+    }
+
     return (
       <div className="relative select-none w-[290px] h-[230px] md:w-[340px] md:h-[270px] transition-transform duration-500">
         
@@ -338,54 +363,73 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
             className="flex items-center justify-center w-11 h-11 rounded-full border border-stone-200 bg-white/80 hover:bg-white text-[#8e7046] hover:text-[#765d3b] shadow-xs cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 z-30"
             aria-label="Previous product"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5" />
           </button>
 
           {/* Coordinated Interactive Tea Boxes Stage */}
-          <div className="relative w-[290px] h-[230px] md:w-[340px] md:h-[270px] flex items-center justify-center overflow-visible z-10">
+          <div
+            className="relative w-[340px] md:w-[480px] aspect-[656/438] flex items-center justify-center overflow-visible z-10"
+            style={{ perspective: '1400px' }}
+          >
             <AnimatePresence mode="popLayout" custom={direction}>
               <motion.div
                 key={activeProduct.id}
-                initial={{ 
-                  x: direction === 1 ? "130%" : "-130%", 
-                  scale: 0.72, 
-                  rotate: direction === 1 ? 7 : -7, 
-                  opacity: 0 
-                }}
-                animate={{
-                  x: "0%",
-                  scale: 1,
-                  rotate: 1.5,
-                  opacity: 1,
-                  zIndex: 30,
-                  filter: "drop-shadow(0 25px 35px rgba(0,0,0,0.18)) blur(0px)",
-                }}
-                exit={{
-                  x: direction === 1 ? "-130%" : "130%",
-                  scale: 0.72,
-                  rotate: direction === 1 ? -7 : 7,
+                custom={direction}
+                initial={{
+                  y: '-120%',
+                  rotateX: 52,
+                  rotateY: direction === 1 ? -14 : 14,
+                  scale: 0.68,
                   opacity: 0,
                   zIndex: 10,
-                  filter: "drop-shadow(0 6px 15px rgba(0,0,0,0.1)) blur(1.5px)",
+                }}
+                animate={{
+                  y: 0,
+                  rotateX: 11,
+                  rotateY: -6,
+                  rotateZ: 1.5,
+                  scale: 1,
+                  opacity: 1,
+                  zIndex: 30,
+                }}
+                exit={{
+                  y: '90%',
+                  rotateX: -38,
+                  rotateY: direction === 1 ? 12 : -12,
+                  scale: 0.72,
+                  opacity: 0,
+                  zIndex: 10,
                 }}
                 transition={{
                   type: 'spring',
-                  stiffness: 110,
-                  damping: 18,
-                  mass: 0.8
+                  stiffness: 95,
+                  damping: 16,
+                  mass: 0.9,
                 }}
-                className="absolute flex items-center justify-center select-none"
+                className="absolute flex flex-col items-center justify-center select-none [transform-style:preserve-3d]"
+                style={{ transformPerspective: 1400 }}
               >
-                {/* Floating physics only on active center product */}
+                {/* Ground shadow */}
                 <motion.div
+                  className="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 w-[72%] h-6 md:h-8 rounded-[100%] bg-black/30 blur-xl pointer-events-none -z-10"
+                  initial={{ scaleX: 0.4, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: 0.55 }}
+                  exit={{ scaleX: 0.5, opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+
+                {/* Floating 3D idle motion */}
+                <motion.div
+                  className="[transform-style:preserve-3d]"
                   animate={{
-                    y: [0, -8, 0],
-                    rotate: [1.5, 2.2, 1.5]
+                    y: [0, -12, 0],
+                    rotateX: [11, 7, 11],
+                    rotateY: [-6, -3, -6],
                   }}
                   transition={{
-                    duration: 6,
+                    duration: 5.5,
                     repeat: Infinity,
-                    ease: 'easeInOut'
+                    ease: 'easeInOut',
                   }}
                 >
                   {renderPremiumBox(activeProduct)}
@@ -404,7 +448,7 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
             className="flex items-center justify-center w-11 h-11 rounded-full border border-stone-200 bg-white/80 hover:bg-white text-[#8e7046] hover:text-[#765d3b] shadow-xs cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 z-30"
             aria-label="Next product"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5" />
           </button>
 
         </div>

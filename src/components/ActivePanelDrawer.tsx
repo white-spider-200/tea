@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   X, ShoppingBag, Plus, Minus, Trash2, Send, CheckCircle, 
-  Sparkles, Coffee, Award, Calendar, Heart, Search, Check, Gift 
+  Award, Search, Check, Gift 
 } from 'lucide-react';
 import { ActivePanel, Language, CartItem, TeaProduct } from '../types';
 import { TEA_PRODUCTS, TRANSLATIONS } from '../data';
@@ -36,6 +36,7 @@ export default function ActivePanelDrawer({
   onOpenProductDetail,
   onCheckout,
 }: ActivePanelDrawerProps) {
+  const SALES_EMAIL = 'mhindi@trusttechlimited.com';
   const isAr = lang === 'ar';
   const t = TRANSLATIONS[lang];
 
@@ -48,12 +49,12 @@ export default function ActivePanelDrawer({
   // Contact form states
   const [contactName, setContactName] = useState('');
   const [contactEmail, setContactEmail] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
+  const [contactLocation, setContactLocation] = useState('');
   const [contactMessage, setContactMessage] = useState('');
   const [contactSubmitted, setContactSubmitted] = useState(false);
-
-  // Subscription state
-  const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'premium' | null>(null);
-  const [subSuccess, setSubSuccess] = useState(false);
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactError, setContactError] = useState<string | null>(null);
 
   // Checkout states
   const [checkoutStep, setCheckoutStep] = useState<'cart' | 'form'>('cart');
@@ -73,21 +74,51 @@ export default function ActivePanelDrawer({
     exit: { x: isAr ? '-100%' : '100%', opacity: 0.95 },
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (contactName && contactEmail && contactMessage) {
-      setContactSubmitted(true);
-      setTimeout(() => {
-        setContactName('');
-        setContactEmail('');
-        setContactMessage('');
-      }, 500);
-    }
-  };
+    setContactSubmitting(true);
+    setContactError(null);
 
-  const handleSubSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubSuccess(true);
+    try {
+      const response = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: contactName,
+          email: contactEmail,
+          phone: contactPhone,
+          location: contactLocation,
+          message: contactMessage,
+          isAr,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.error ||
+            (isAr ? 'فشل إرسال الرسالة. يرجى المحاولة لاحقاً.' : 'Failed to send message. Please try again.')
+        );
+      }
+
+      setContactSubmitted(true);
+      setContactName('');
+      setContactEmail('');
+      setContactPhone('');
+      setContactLocation('');
+      setContactMessage('');
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : isAr
+            ? 'عذراً، حدث خطأ أثناء إرسال رسالتك.'
+            : 'Sorry, an error occurred while sending your message.';
+      setContactError(message);
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   // Filter teas for Shop
@@ -166,7 +197,7 @@ export default function ActivePanelDrawer({
   };
 
   return (
-    <div id="active-panel-drawer" className="fixed inset-0 z-40 flex overflow-hidden">
+    <div id="active-panel-drawer" className="fixed inset-0 z-[60] flex overflow-hidden">
       {/* Blurred Backdrop */}
       <motion.div
         className="absolute inset-0 bg-black/45 backdrop-blur-xs"
@@ -361,12 +392,10 @@ export default function ActivePanelDrawer({
                   {/* Pricing Box */}
                   <div className="border-t border-stone-100 pt-6 space-y-3.5">
                     <div className="flex items-center justify-between text-sm text-stone-500">
-                      <span>{isAr ? 'شحن بري مجاني' : 'Complimentary shipping'}</span>
-                      <span className="font-serif italic">{isAr ? 'مشمول' : 'Complimentary'}</span>
                     </div>
                     <div className="flex items-center justify-between text-base font-semibold text-stone-900 border-b border-stone-100 pb-4">
-                      <span>{t.subtotal}</span>
-                      <span className="font-mono text-lg">${cartTotal}.00</span>
+                      <span>المجموع الكلي</span>
+                      <span className="font-mono text-lg">{cartTotal} JOD</span>
                     </div>
 
                     <button
@@ -382,14 +411,6 @@ export default function ActivePanelDrawer({
                 /* Step 2: Checkout Form */
                 <form onSubmit={handleEmailOrderSubmit} className="space-y-5">
                   <div className="bg-stone-50 p-4 rounded-xl border border-stone-100 space-y-2">
-                    <h3 className="font-serif font-medium text-stone-900 text-sm">
-                      {isAr ? 'ملخص طلب الشراء' : 'Order Summary'}
-                    </h3>
-                    <p className="text-stone-500 text-[11px] leading-relaxed">
-                      {isAr
-                        ? 'سيتم إرسال هذا الطلب مباشرة إلى المبيعات mohammedh.handi@gmail.com بنقرة زر واحدة.'
-                        : 'Your order will be sent directly to sales at mohammedh.handi@gmail.com with a single click.'}
-                    </p>
                     <div className="border-t border-stone-200/60 pt-2 text-xs font-mono text-stone-600 space-y-1">
                       {cartItems.map(item => (
                         <div key={item.product.id} className="flex justify-between">
@@ -421,7 +442,6 @@ export default function ActivePanelDrawer({
                         disabled={isSubmitting}
                         value={customerName}
                         onChange={(e) => setCustomerName(e.target.value)}
-                        placeholder={isAr ? 'محمد الحندي' : 'Mohammed Al-Handi'}
                         className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold disabled:opacity-60 disabled:cursor-not-allowed"
                       />
                     </div>
@@ -436,7 +456,6 @@ export default function ActivePanelDrawer({
                         disabled={isSubmitting}
                         value={customerEmail}
                         onChange={(e) => setCustomerEmail(e.target.value)}
-                        placeholder="your-email@example.com"
                         className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold font-mono disabled:opacity-60 disabled:cursor-not-allowed"
                       />
                     </div>
@@ -501,131 +520,7 @@ export default function ActivePanelDrawer({
             </div>
           )}
 
-          {/* 3. SUBSCRIPTION PANEL */}
-          {panel === 'subscription' && (
-            <div id="subscription-drawer-view" className="space-y-6">
-              {!subSuccess ? (
-                <>
-                  <div className="text-center space-y-2">
-                    <h3 className="font-serif text-lg md:text-xl font-medium tracking-wide">
-                      {t.subscribeTitle}
-                    </h3>
-                    <p className="text-stone-500 text-xs md:text-sm leading-relaxed max-w-sm mx-auto">
-                      {t.subscribeSubtitle}
-                    </p>
-                  </div>
-
-                  {/* Custom Plans */}
-                  <div className="space-y-4">
-                    <div
-                      onClick={() => setSelectedPlan('monthly')}
-                      className={`p-5 rounded-xl border transition-all cursor-pointer ${
-                        selectedPlan === 'monthly'
-                          ? 'border-tea-gold bg-stone-50/50 shadow-sm'
-                          : 'border-stone-100 bg-white hover:border-stone-200'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-serif font-semibold text-stone-900">
-                          {t.subscribePlanMonthly}
-                        </h4>
-                        <span className="font-mono font-bold text-tea-gold-dark">$29/mo</span>
-                      </div>
-                      <p className="text-xs text-stone-500 leading-relaxed">
-                        {isAr
-                          ? '٣ علب شاي منتقاة موسمياً، تذوق إرشادي فريد، وشحن مجاني.'
-                          : '3 premium seasonal taster tins, complete steeping guides, tasting notes, and free shipping.'}
-                      </p>
-                    </div>
-
-                    <div
-                      onClick={() => setSelectedPlan('premium')}
-                      className={`p-5 rounded-xl border transition-all cursor-pointer ${
-                        selectedPlan === 'premium'
-                          ? 'border-tea-gold bg-stone-50/50 shadow-sm'
-                          : 'border-stone-100 bg-white hover:border-stone-200'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-1.5 space-x-reverse">
-                          <h4 className="font-serif font-semibold text-stone-900">
-                            {t.subscribePlanPremium}
-                          </h4>
-                          <span className="bg-amber-50 text-amber-800 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">
-                            {isAr ? 'نادر' : 'Rare'}
-                          </span>
-                        </div>
-                        <span className="font-mono font-bold text-tea-gold-dark">$49/mo</span>
-                      </div>
-                      <p className="text-xs text-stone-500 leading-relaxed">
-                        {isAr
-                          ? '٥ علب من أندر أنواع الشاي أحادي المنشأ، ملحق تخمير حرفي يدوياً، ودعوات لحصص التذوق الحية عبر الإنترنت.'
-                          : '5 rare single-origin micro-lot tins, a hand-crafted tea accessory, and exclusive invitations to online live masterclasses.'}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Form fields */}
-                  <form onSubmit={handleSubSubmit} className="space-y-4 border-t border-stone-100 pt-5">
-                    <div className="space-y-1.5">
-                      <label className="text-[10px] uppercase tracking-wider font-semibold text-stone-500 block">
-                        {isAr ? 'نوع الشاي المفضل' : 'Preferred Tea Profile'}
-                      </label>
-                      <select className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold">
-                        <option>{isAr ? 'جميع أنواع الشاي الكلاسيكي' : 'All Curated Classics'}</option>
-                        <option>{isAr ? 'عشبي وخالٍ من الكافيين فقط' : 'Herbal & Caffeine-Free Only'}</option>
-                        <option>{isAr ? 'أخضر وماتشا فاخر' : 'Premium Greens & Matcha'}</option>
-                        <option>{isAr ? 'أسود وشاي ماسالا قوي' : 'Robust Blacks & Chai'}</option>
-                      </select>
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-[10px] uppercase tracking-wider font-semibold text-stone-500 block">
-                        {isAr ? 'البريد الإلكتروني للتسليم' : 'Delivery Email'}
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="mohammedh.handi@gmail.com"
-                        className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold font-mono"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={!selectedPlan}
-                      className="w-full py-3.5 rounded-lg bg-tea-charcoal disabled:bg-stone-300 hover:bg-tea-gold text-white text-xs uppercase tracking-widest font-semibold transition-all cursor-pointer"
-                    >
-                      {t.subscribeButton}
-                    </button>
-                  </form>
-                </>
-              ) : (
-                <div className="py-12 flex flex-col items-center justify-center text-center space-y-4">
-                  <CheckCircle className="w-14 h-14 text-emerald-500 stroke-1" />
-                  <h3 className="font-serif text-xl font-medium tracking-wide">
-                    {isAr ? 'أهلاً بك في النادي الحرفي!' : 'Welcome to the Connoisseur Club!'}
-                  </h3>
-                  <p className="text-stone-500 text-xs md:text-sm max-w-sm leading-relaxed">
-                    {isAr
-                      ? 'لقد تم إعداد اشتراكك التجريبي بنجاح. سوف نرسل لك رسالة تأكيد إلى بريدك الإلكتروني.'
-                      : 'Your simulated premium tea subscription has been activated. A curated welcome box is ready for dispatch!'}
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSubSuccess(false);
-                      setSelectedPlan(null);
-                    }}
-                    className="text-xs uppercase tracking-widest font-semibold text-tea-gold hover:text-tea-gold-dark mt-2 underline"
-                  >
-                    {isAr ? 'إغلاق أو تعديل الاشتراك' : 'Back to Subscription Options'}
-                  </button>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* 4. ABOUT PANEL */}
+          {/* 3. ABOUT PANEL */}
           {panel === 'about' && (
             <div id="about-drawer-view" className="space-y-6">
               <div className="space-y-4">
@@ -732,7 +627,7 @@ export default function ActivePanelDrawer({
                     <h3 className="font-serif font-medium text-stone-900">
                       {isAr ? 'مرحباً بك مجدداً، محمد!' : 'Welcome back, Mohammed!'}
                     </h3>
-                    <p className="text-xs text-stone-500 font-mono">mohammedh.handi@gmail.com</p>
+                    <p className="text-xs text-stone-500 font-mono">{SALES_EMAIL}</p>
                   </div>
                 </div>
 
@@ -895,8 +790,38 @@ export default function ActivePanelDrawer({
                       required
                       value={contactEmail}
                       onChange={(e) => setContactEmail(e.target.value)}
-                      placeholder="mohammedh.handi@gmail.com"
+                      placeholder="your-email@example.com"
                       className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold font-mono"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] uppercase tracking-wider font-semibold text-stone-500 block">
+                      {t.contactPhone}
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      disabled={contactSubmitting}
+                      value={contactPhone}
+                      onChange={(e) => setContactPhone(e.target.value)}
+                      placeholder="+20 100 000 0000"
+                      className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold font-mono disabled:opacity-60"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] uppercase tracking-wider font-semibold text-stone-500 block">
+                      {t.contactLocation}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      disabled={contactSubmitting}
+                      value={contactLocation}
+                      onChange={(e) => setContactLocation(e.target.value)}
+                      placeholder={isAr ? 'المدينة، الدولة' : 'City, Country'}
+                      className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold disabled:opacity-60"
                     />
                   </div>
 
@@ -907,19 +832,27 @@ export default function ActivePanelDrawer({
                     <textarea
                       required
                       rows={5}
+                      disabled={contactSubmitting}
                       value={contactMessage}
                       onChange={(e) => setContactMessage(e.target.value)}
                       placeholder={isAr ? 'اكتب استفسارك هنا...' : 'How can we enhance your steeping ritual?'}
-                      className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold"
+                      className="w-full px-3 py-2 text-xs md:text-sm bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-tea-gold disabled:opacity-60"
                     />
                   </div>
 
+                  {contactError && (
+                    <div className="bg-red-50 text-red-700 text-xs p-3 rounded-lg border border-red-100 leading-normal">
+                      <strong>{isAr ? 'خطأ:' : 'Error:'}</strong> {contactError}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-lg bg-tea-charcoal hover:bg-tea-gold text-white text-xs uppercase tracking-widest font-semibold transition-all cursor-pointer flex items-center justify-center space-x-2 space-x-reverse"
+                    disabled={contactSubmitting}
+                    className="w-full py-3.5 rounded-lg bg-tea-charcoal hover:bg-tea-gold disabled:bg-stone-300 text-white text-xs uppercase tracking-widest font-semibold transition-all cursor-pointer flex items-center justify-center space-x-2 space-x-reverse"
                   >
                     <Send className="w-3.5 h-3.5" />
-                    <span>{t.contactSubmit}</span>
+                    <span>{contactSubmitting ? (isAr ? 'جاري الإرسال...' : 'Sending...') : t.contactSubmit}</span>
                   </button>
                 </form>
               ) : (

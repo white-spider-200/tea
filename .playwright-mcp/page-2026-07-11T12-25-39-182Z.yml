@@ -1,0 +1,247 @@
+- generic [ref=f7e3]:
+  - banner [ref=f7e4]:
+    - generic [ref=f7e5]:
+      - navigation [ref=f7e7]:
+        - button "تسوّق الشاي" [ref=f7e8] [cursor=pointer]
+        - button "مزارعنا" [ref=f7e9] [cursor=pointer]
+        - button "مسئوليتنا" [ref=f7e10] [cursor=pointer]
+        - button "اتصل بنا" [ref=f7e11] [cursor=pointer]
+      - img "رويال هيربس - تأسس ١٩٨٥" [ref=f7e14] [cursor=pointer]
+      - button "السلة (0)" [ref=f7e17] [cursor=pointer]
+  - generic [ref=f7e18]:
+    - img "Artisan Tea Flatlay background" [ref=f7e20]
+    - main [ref=f7e23]:
+      - generic [ref=f7e24]:
+        - heading "الترقية المثالية لكوب الشاي اليومي" [level=1] [ref=f7e25]
+        - paragraph [ref=f7e26]: شاي يدوي حرفي حائز على جوائز. أكياس شاي قابلة للتحلل وخالية من البلاستيك وأوراق شاي سائبة مصنوعة ليومك.
+        - button "تسوّق الشاي" [ref=f7e28] [cursor=pointer]
+  - generic [ref=f7e29]:
+    - generic [ref=f7e30]:
+      - generic [ref=f7e35]: تـشـكـيـلـة الـشـاي الـمـلـكـي
+      - heading "منتجات فريدة *" [level=2] [ref=f7e36]:
+        - generic [ref=f7e37]: منتجات فريدة
+        - generic [ref=f7e38]: "*"
+      - paragraph [ref=f7e39]: اكتشف تشكيلة علب الشاي العشبي الفاخرة، المصممة خصيصاً بمكونات برية طبيعية لدعم عافيتك وصحتك البدنية.
+    - generic [ref=f7e40]:
+      - generic:
+        - generic:
+          - heading "شاي ريجيم" [level=3]
+      - generic [ref=f7e41]:
+        - button "Previous product" [ref=f7e42] [cursor=pointer]
+        - img "شاي ريجيم الملكي" [ref=f7e49]
+        - button "Next product" [ref=f7e50] [cursor=pointer]
+      - generic [ref=f7e54]:
+        - heading "شاي ريجيم الملكي" [level=4] [ref=f7e55]
+        - paragraph [ref=f7e56]: منقوع عشبي ملكي عضوي للمساعدة على تخفيف الوزن، محضر بعناية من أجود الأعشاب البرية ونباتات البحر الأبيض المتوسط.
+  - generic [ref=f7e57]:
+    - generic [ref=f7e59]:
+      - paragraph [ref=f7e60]: شركاؤنا والشهادات
+      - heading "الشركات التي نتعاون معها" [level=2] [ref=f7e61]
+      - paragraph [ref=f7e64]: نفخر بالتعاون مع أبرز المؤسسات والجهات المعتمدة عالمياً في مجال الجودة والاستدامة.
+    - generic [ref=f7e65]:
+      - generic [ref=f7e67]:
+        - generic [ref=f7e68]:
+          - generic [ref=f7e69]:
+            - img "هيئة الدواء المصرية"
+            - generic: هيئة الدواء المصرية
+          - generic [ref=f7e70]:
+            - img "جمعية التجارة الأمريكية للتوابل"
+            - generic: جمعية التجارة الأمريكية للتوابل
+          - generic [ref=f7e71]:
+            - img "كندا العضوي"
+            - generic: كندا العضوي
+          - generic [ref=f7e72]:
+            - img "شهادة CERES"
+            - generic: شهادة CERES
+          - generic [ref=f7e73]:
+            - img "جمعية التوابل الأوروبية"
+            - generic: جمعية التوابل الأوروبية
+          - generic [ref=f7e74]:
+            - img "الاتحاد الأوروبي العضوي"
+            - generic: الاتحاد الأوروبي العضوي
+          - generic [ref=f7e75]:
+            - img "إدارة الغذاء والدواء الأمريكية"
+            - generic: إدارة الغذاء والدواء الأمريكية
+          - generic [ref=f7e76]:
+            - img "FSSC 22000"
+            - generic: FSSC 22000
+          - generic [ref=f7e77]:
+            - img "شهادة GMP"
+            - generic: شهادة GMP
+          - generic [ref=f7e78]:
+            - img "حلال معتمد"
+            - generic: حلال معتمد
+          - generic [ref=f7e79]:
+            - img "ISO 14001"
+            - generic: ISO 14001
+        - generic [ref=f7e80]:
+          - generic [ref=f7e81]:
+            - img "هيئة الدواء المصرية"
+            - generic: هيئة الدواء المصرية
+          - generic [ref=f7e82]:
+            - img "جمعية التجارة الأمريكية للتوابل"
+            - generic: جمعية التجارة الأمريكية للتوابل
+          - generic [ref=f7e83]:
+            - img "كندا العضوي"
+            - generic: كندا العضوي
+          - generic [ref=f7e84]:
+            - img "شهادة CERES"
+            - generic: شهادة CERES
+          - generic [ref=f7e85]:
+            - img "جمعية التوابل الأوروبية"
+            - generic: جمعية التوابل الأوروبية
+          - generic [ref=f7e86]:
+            - img "الاتحاد الأوروبي العضوي"
+            - generic: الاتحاد الأوروبي العضوي
+          - generic [ref=f7e87]:
+            - img "إدارة الغذاء والدواء الأمريكية"
+            - generic: إدارة الغذاء والدواء الأمريكية
+          - generic [ref=f7e88]:
+            - img "FSSC 22000"
+            - generic: FSSC 22000
+          - generic [ref=f7e89]:
+            - img "شهادة GMP"
+            - generic: شهادة GMP
+          - generic [ref=f7e90]:
+            - img "حلال معتمد"
+            - generic: حلال معتمد
+          - generic [ref=f7e91]:
+            - img "ISO 14001"
+            - generic: ISO 14001
+        - generic [ref=f7e92]:
+          - generic [ref=f7e93]:
+            - img "هيئة الدواء المصرية"
+            - generic: هيئة الدواء المصرية
+          - generic [ref=f7e94]:
+            - img "جمعية التجارة الأمريكية للتوابل"
+            - generic: جمعية التجارة الأمريكية للتوابل
+          - generic [ref=f7e95]:
+            - img "كندا العضوي"
+            - generic: كندا العضوي
+          - generic [ref=f7e96]:
+            - img "شهادة CERES"
+            - generic: شهادة CERES
+          - generic [ref=f7e97]:
+            - img "جمعية التوابل الأوروبية"
+            - generic: جمعية التوابل الأوروبية
+          - generic [ref=f7e98]:
+            - img "الاتحاد الأوروبي العضوي"
+            - generic: الاتحاد الأوروبي العضوي
+          - generic [ref=f7e99]:
+            - img "إدارة الغذاء والدواء الأمريكية"
+            - generic: إدارة الغذاء والدواء الأمريكية
+          - generic [ref=f7e100]:
+            - img "FSSC 22000"
+            - generic: FSSC 22000
+          - generic [ref=f7e101]:
+            - img "شهادة GMP"
+            - generic: شهادة GMP
+          - generic [ref=f7e102]:
+            - img "حلال معتمد"
+            - generic: حلال معتمد
+          - generic [ref=f7e103]:
+            - img "ISO 14001"
+            - generic: ISO 14001
+      - generic [ref=f7e105]:
+        - generic [ref=f7e106]:
+          - generic [ref=f7e107]:
+            - img "ISO 22000"
+            - generic: ISO 22000
+          - generic [ref=f7e108]:
+            - img "ISO 9001:2015"
+            - generic: ISO 9001:2015
+          - generic [ref=f7e109]:
+            - img "JAS العضوي"
+            - generic: JAS العضوي
+          - generic [ref=f7e110]:
+            - img "كوشر معتمد"
+            - generic: كوشر معتمد
+          - generic [ref=f7e111]:
+            - img "mabagrown"
+            - generic: mabagrown
+          - generic [ref=f7e112]:
+            - img "مجموعة مارتن باور"
+            - generic: مجموعة مارتن باور
+          - generic [ref=f7e113]:
+            - img "ناتورلاند"
+            - generic: ناتورلاند
+          - generic [ref=f7e114]:
+            - img "شريك"
+            - generic: شريك
+          - generic [ref=f7e115]:
+            - img "تحالف الغابات المطيرة"
+            - generic: تحالف الغابات المطيرة
+          - generic [ref=f7e116]:
+            - img "سيدكس"
+            - generic: سيدكس
+          - generic [ref=f7e117]:
+            - img "USDA العضوي"
+            - generic: USDA العضوي
+        - generic [ref=f7e118]:
+          - generic [ref=f7e119]:
+            - img "ISO 22000"
+            - generic: ISO 22000
+          - generic [ref=f7e120]:
+            - img "ISO 9001:2015"
+            - generic: ISO 9001:2015
+          - generic [ref=f7e121]:
+            - img "JAS العضوي"
+            - generic: JAS العضوي
+          - generic [ref=f7e122]:
+            - img "كوشر معتمد"
+            - generic: كوشر معتمد
+          - generic [ref=f7e123]:
+            - img "mabagrown"
+            - generic: mabagrown
+          - generic [ref=f7e124]:
+            - img "مجموعة مارتن باور"
+            - generic: مجموعة مارتن باور
+          - generic [ref=f7e125]:
+            - img "ناتورلاند"
+            - generic: ناتورلاند
+          - generic [ref=f7e126]:
+            - img "شريك"
+            - generic: شريك
+          - generic [ref=f7e127]:
+            - img "تحالف الغابات المطيرة"
+            - generic: تحالف الغابات المطيرة
+          - generic [ref=f7e128]:
+            - img "سيدكس"
+            - generic: سيدكس
+          - generic [ref=f7e129]:
+            - img "USDA العضوي"
+            - generic: USDA العضوي
+        - generic [ref=f7e130]:
+          - generic [ref=f7e131]:
+            - img "ISO 22000"
+            - generic: ISO 22000
+          - generic [ref=f7e132]:
+            - img "ISO 9001:2015"
+            - generic: ISO 9001:2015
+          - generic [ref=f7e133]:
+            - img "JAS العضوي"
+            - generic: JAS العضوي
+          - generic [ref=f7e134]:
+            - img "كوشر معتمد"
+            - generic: كوشر معتمد
+          - generic [ref=f7e135]:
+            - img "mabagrown"
+            - generic: mabagrown
+          - generic [ref=f7e136]:
+            - img "مجموعة مارتن باور"
+            - generic: مجموعة مارتن باور
+          - generic [ref=f7e137]:
+            - img "ناتورلاند"
+            - generic: ناتورلاند
+          - generic [ref=f7e138]:
+            - img "شريك"
+            - generic: شريك
+          - generic [ref=f7e139]:
+            - img "تحالف الغابات المطيرة"
+            - generic: تحالف الغابات المطيرة
+          - generic [ref=f7e140]:
+            - img "سيدكس"
+            - generic: سيدكس
+          - generic [ref=f7e141]:
+            - img "USDA العضوي"
+            - generic: USDA العضوي

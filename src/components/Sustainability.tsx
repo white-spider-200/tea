@@ -1,14 +1,16 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { X, Globe, Mail, Phone, MapPin, ExternalLink, ChevronLeft, ChevronRight, Award } from 'lucide-react';
-import { Language } from '../types';
+import { X, Globe, ExternalLink, ChevronLeft, ChevronRight, Award } from 'lucide-react';
+import { Language, ActivePanel } from '../types';
+import SiteFooter from './SiteFooter';
 
 interface SustainabilityProps {
   lang: Language;
   onClose: () => void;
+  onOpenPanel: (panel: ActivePanel) => void;
 }
 
-export default function Sustainability({ lang, onClose }: SustainabilityProps) {
+export default function Sustainability({ lang, onClose, onOpenPanel }: SustainabilityProps) {
   const isAr = lang === 'ar';
 
   // High-quality imagery for goals & elements
@@ -21,7 +23,7 @@ export default function Sustainability({ lang, onClose }: SustainabilityProps) {
   return (
     <motion.div
       id="sustainability-full-page"
-      className="fixed inset-0 z-30 overflow-y-auto bg-stone-900 text-stone-800 scrollbar-thin select-none pt-24 md:pt-32"
+      className="fixed inset-0 z-30 overflow-y-auto bg-[#eef4e2] text-stone-800 scrollbar-thin select-none pt-24 md:pt-32"
       dir={isAr ? 'rtl' : 'ltr'}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -260,278 +262,50 @@ export default function Sustainability({ lang, onClose }: SustainabilityProps) {
       </section>
 
       {/* PARTNERS LOGO SECTION */}
-      <section className="bg-[#f0f5fc] py-16 px-6 sm:px-12 text-center border-b border-stone-200">
-        <div className="max-w-6xl mx-auto space-y-10">
+      <section className="bg-[#f0f5fc] py-16 px-4 sm:px-10 text-center border-b border-stone-200">
+        <div className="max-w-7xl mx-auto space-y-10">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-950">
             {isAr ? 'شركاء من أجل الصالح العام' : 'Partners for the Common Good'}
           </h2>
 
           {/* Symmetrical Vector Logotype Layout */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-center justify-center w-full mx-auto">
             {/* Logo 1: Ader */}
-            <div className="bg-white/80 border border-stone-200 p-6 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 h-24 flex items-center justify-center">
-              <span className="font-serif font-black tracking-widest text-[#2c3d5a] text-xl md:text-2xl italic">ader</span>
+            <div className="bg-white/80 border border-stone-200 py-10 px-2 sm:py-12 sm:px-4 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 w-full h-[110px] sm:h-[140px] flex items-center justify-center">
+              <span className="font-serif font-black tracking-widest text-[#2c3d5a] text-2xl md:text-3xl lg:text-4xl italic">ader</span>
             </div>
             
             {/* Logo 2: Econsult */}
-            <div className="bg-white/80 border border-stone-200 p-6 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 h-24 flex flex-col items-center justify-center space-y-1">
-              <div className="flex space-x-1 space-x-reverse mb-0.5">
-                <span className="w-3 h-3 rounded-full bg-[#52a77c]" />
-                <span className="w-3 h-3 rounded-full bg-[#52a77c]" />
-                <span className="w-3 h-3 rounded-full bg-[#3c7255]" />
+            <div className="bg-white/80 border border-stone-200 py-10 px-2 sm:py-12 sm:px-4 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 w-full h-[110px] sm:h-[140px] flex flex-col items-center justify-center space-y-2">
+              <div className="flex space-x-2 space-x-reverse mb-1">
+                <span className="w-4 h-4 rounded-full bg-[#52a77c]" />
+                <span className="w-4 h-4 rounded-full bg-[#52a77c]" />
+                <span className="w-4 h-4 rounded-full bg-[#3c7255]" />
               </div>
-              <span className="font-sans font-bold tracking-wider text-[#2e503f] text-sm md:text-base">econsult</span>
+              <span className="font-sans font-bold tracking-wider text-[#2e503f] text-lg md:text-xl">econsult</span>
             </div>
 
             {/* Logo 3: Apco */}
-            <div className="bg-white/80 border border-stone-200 p-6 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 h-24 flex flex-col items-center justify-center">
-              <span className="font-sans font-black tracking-tighter text-[#f37c22] text-lg md:text-xl">apco.</span>
-              <span className="text-[7px] uppercase font-bold tracking-widest text-stone-500 text-center leading-none">Sustainable Energy Developers</span>
+            <div className="bg-white/80 border border-stone-200 py-10 px-2 sm:py-12 sm:px-4 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 w-full h-[110px] sm:h-[140px] flex flex-col items-center justify-center space-y-2">
+              <span className="font-sans font-black tracking-tighter text-[#f37c22] text-xl md:text-2xl lg:text-3xl">apco.</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-stone-500 text-center leading-tight">Sustainable Energy Developers</span>
             </div>
 
             {/* Logo 4: ACDA */}
-            <div className="bg-white/80 border border-stone-200 p-6 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 h-24 flex flex-col items-center justify-center">
-              <div className="border-b border-[#a82531] pb-0.5 mb-1 flex items-center justify-center space-x-1 space-x-reverse">
-                <span className="text-[#a82531] font-bold text-sm">ACDA</span>
-                <span className="text-[10px] text-stone-600">جمعية التنمية والبيئة</span>
+            <div className="bg-white/80 border border-stone-200 py-10 px-2 sm:py-12 sm:px-4 rounded-lg shadow-2xs hover:shadow-sm hover:bg-white transition-all duration-300 w-full h-[110px] sm:h-[140px] flex flex-col items-center justify-center space-y-2">
+              <div className="border-b border-[#a82531] pb-0.5 mb-1 flex items-center justify-center space-x-2 space-x-reverse">
+                <span className="text-[#a82531] font-bold text-base md:text-lg">ACDA</span>
+                <span className="text-[12px] text-stone-600">جمعية التنمية والبيئة</span>
               </div>
-              <span className="text-[6.5px] uppercase font-medium tracking-widest text-stone-400">Environment & Association</span>
-            </div>
-          </div>
-
-          {/* Symmetrical Carousel Navigation dots */}
-          <div className="flex items-center justify-center space-x-2 space-x-reverse">
-            <span className="w-2 h-2 rounded-full bg-stone-300" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#8e7046]" />
-            <span className="w-2 h-2 rounded-full bg-stone-300" />
-            <span className="w-2 h-2 rounded-full bg-stone-300" />
-            <span className="w-2 h-2 rounded-full bg-stone-300" />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA SECTION - Soft Pink */}
-      <section className="bg-[#f9d8d5] py-12 px-6 sm:px-12 text-center border-b border-stone-200">
-        <div className="max-w-4xl mx-auto space-y-5">
-          <h3 className="font-serif text-lg sm:text-2xl font-bold text-stone-900">
-            {isAr ? 'اضغط هنا لتفاصيل أكثر عن أهدافنا وأولوياتنا' : 'Click here to explore details on our sustainability goals & priorities'}
-          </h3>
-          <button 
-            onClick={() => alert(isAr ? 'قريباً: سيتم إطلاق تقرير الاستدامة السنوي المفصل!' : 'Coming soon: Our comprehensive annual impact report will be available here.')}
-            className="bg-white border border-[#8e7046] hover:bg-stone-50 text-stone-900 px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-sm hover:shadow-md cursor-pointer"
-          >
-            {isAr ? 'إضغط هنا' : 'Click Here'}
-          </button>
-        </div>
-      </section>
-
-      {/* BAHARIYA OASIS ACHIEVEMENTS SECTION - Slate Grey */}
-      <section className="bg-[#848789] py-20 px-6 sm:px-12 text-white">
-        <div className="max-w-5xl mx-auto space-y-14">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-wide">
-              {isAr ? 'إنجازات قرية بحرية' : 'Bahariya Oasis Achievements'}
-            </h2>
-            <div className="h-0.5 w-20 bg-white/40 mx-auto rounded-full" />
-            <p className="font-sans font-light text-stone-100 text-sm sm:text-base leading-relaxed text-justify md:text-center">
-              {isAr ? (
-                <>
-                  بيت الضيافة في قرية الواحات البحرية بيعتبر تجسيد لفكرة الاستدامة، من أول الطريقة اللي اتبنى بيها لطريقة إدارته، بيت الضيافة يُعتبر منشأة صديقة للبيئة من كل النواحي.
-                  <br /><br />
-                  البيت ده معتمد من "ترشيد"، وهو برنامج بناء بيئي يعتمد على استراتيجيات وطرق بنا على أحدث طراز، وعلشان ياخذ الاعتماد ده، بيت الضيافة استوفى الحد الأدنى من المتطلبات وتفوق عليها كمان وحقق الإنجازات دي:
-                </>
-              ) : (
-                <>
-                  The guest house in the Bahariya Oasis village is a true embodiment of sustainability, from the way it was built to how it is managed. The guest house is considered an eco-friendly facility in every aspect.
-                  <br /><br />
-                  This house is certified by "Tarsheed", a green building program based on state-of-the-art environmental strategies. To earn this certification, the guest house met and exceeded the minimum requirements, achieving these milestones:
-                </>
-              )}
-            </p>
-          </div>
-
-          {/* Three Giant Symmetrical Stats circles */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {/* Stat 1 */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/15 hover:border-white/20 transition-all duration-300">
-              <span className="block font-serif text-4xl sm:text-5xl font-bold text-white mb-3" style={{ direction: 'ltr' }}>
-                %٣٨.٣٩
-              </span>
-              <span className="block text-sm sm:text-base font-semibold tracking-wide text-stone-100 font-serif">
-                {isAr ? 'توفير الطاقة' : 'Energy Savings'}
-              </span>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/15 hover:border-white/20 transition-all duration-300">
-              <span className="block font-serif text-4xl sm:text-5xl font-bold text-white mb-3" style={{ direction: 'ltr' }}>
-                %٢٢.٦٦
-              </span>
-              <span className="block text-sm sm:text-base font-semibold tracking-wide text-stone-100 font-serif">
-                {isAr ? 'توفير المياه' : 'Water Savings'}
-              </span>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/15 hover:border-white/20 transition-all duration-300">
-              <span className="block font-serif text-4xl sm:text-5xl font-bold text-white mb-3" style={{ direction: 'ltr' }}>
-                %٣٥.٠٨
-              </span>
-              <span className="block text-sm sm:text-base font-semibold tracking-wide text-stone-100 font-serif">
-                {isAr ? 'الحفاظ على البيئة الطبيعية' : 'Natural Ecosystem Conservation'}
-              </span>
+              <span className="text-[9px] uppercase font-medium tracking-widest text-stone-400">Environment & Association</span>
             </div>
           </div>
         </div>
       </section>
+ 
 
-      {/* COMMITMENT TO EMPLOYEES - Solid Lime Green */}
-      <section className="bg-[#cfdfa0] py-16 px-6 sm:px-12 md:px-24 border-b border-stone-200">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-          {/* Left Text */}
-          <div className="md:col-span-7 space-y-6 text-stone-900">
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold leading-tight">
-              {isAr ? 'التزامنا تجاه موظفينا' : 'Our Commitment to Our Employees'}
-            </h2>
-            <p className="font-sans text-stone-800 text-sm sm:text-base leading-relaxed">
-              {isAr 
-                ? 'فريق العمل في مزارعنا هو رأس مالنا الحقيقي. بنوفر لهم بيئة عمل آمنة، برامج تدريب مستمرة، رعاية صحية كاملة، وفرص حقيقية للتقدم والنمو المهني والشخصي. سلامة موظفينا وصحتهم هي أولى أولوياتنا دايماً.'
-                : 'The workforce on our farms is our true capital. We provide them with a safe working environment, continuous training programs, comprehensive health care, and genuine opportunities for professional and personal growth. Our employees\' health and safety is always our topmost priority.'}
-            </p>
-            <button 
-              onClick={() => alert(isAr ? 'سيتم تفعيل قسم المهن والتوظيف قريباً!' : 'Careers portal coming soon!')}
-              className="bg-[#2e503f] text-white hover:bg-stone-900 px-6 py-3 rounded-sm text-xs uppercase tracking-widest font-bold transition-all cursor-pointer"
-            >
-              {isAr ? 'إقرأ المزيد' : 'Read More'}
-            </button>
-          </div>
-
-          {/* Right Image/Portrait of young male employee */}
-          <div className="md:col-span-5 flex justify-center">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-8 border-white/60 shadow-lg">
-              <img
-                src={employeeImg}
-                alt="Smiling Royal Herbs employee"
-                className="w-full h-full object-cover object-top scale-105"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* DEDICATED ROYAL HERBS FOOTER */}
-      <footer className="bg-stone-950 text-stone-400 py-16 px-6 sm:px-12 md:px-24 border-t border-white/5">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-          
-          {/* Col 1: Explore */}
-          <div className="space-y-4">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              {isAr ? 'استكشف' : 'Explore'}
-            </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li>
-                <button onClick={onClose} className="hover:text-white transition-colors cursor-pointer text-right">
-                  {isAr ? 'الرئيسية' : 'Home'}
-                </button>
-              </li>
-              <li>
-                <button onClick={onClose} className="hover:text-white transition-colors cursor-pointer text-right">
-                  {isAr ? 'مزارعنا' : 'Our Farms'}
-                </button>
-              </li>
-              <li>
-                <button onClick={onClose} className="hover:text-white transition-colors cursor-pointer text-right">
-                  {isAr ? 'منتجاتنا' : 'Our Products'}
-                </button>
-              </li>
-              <li>
-                <button onClick={onClose} className="hover:text-white transition-colors cursor-pointer text-right">
-                  {isAr ? 'مسئوليتنا (التنمية المستدامة)' : 'Our Responsibility (Sustainability)'}
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 2: Useful links */}
-          <div className="space-y-4">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              {isAr ? 'روابط مفيدة' : 'Useful Links'}
-            </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li>
-                <button onClick={() => alert(isAr ? 'قسم الأخبار قريباً!' : 'News section coming soon')} className="hover:text-white transition-colors cursor-pointer">
-                  {isAr ? 'الأخبار' : 'Latest News'}
-                </button>
-              </li>
-              <li>
-                <button onClick={() => alert(isAr ? 'بوابة الوظائف قريباً!' : 'Careers coming soon')} className="hover:text-white transition-colors cursor-pointer">
-                  {isAr ? 'وظائف' : 'Careers'}
-                </button>
-              </li>
-              <li>
-                <button onClick={() => alert(isAr ? 'تواصل معنا قريباً!' : 'Contact form available on home panel')} className="hover:text-white transition-colors cursor-pointer">
-                  {isAr ? 'تواصل معانا' : 'Contact Us'}
-                </button>
-              </li>
-              <li>
-                <button onClick={() => alert(isAr ? 'طلب الشراكة مغلق حالياً!' : 'Partnership inquiry')} className="hover:text-white transition-colors cursor-pointer">
-                  {isAr ? 'عايز تبقى شريك لينا؟' : 'Become a Partner?'}
-                </button>
-              </li>
-              <li>
-                <button onClick={() => alert(isAr ? 'الأحكام والشروط قيد المراجعة!' : 'Terms & Conditions')} className="hover:text-white transition-colors cursor-pointer">
-                  {isAr ? 'الأحكام والشروط' : 'Terms & Conditions'}
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 3: Contact */}
-          <div className="space-y-4">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              {isAr ? 'ابقى على تواصل' : 'Stay Connected'}
-            </h4>
-            <ul className="space-y-3.5 text-xs">
-              <li className="flex items-center space-x-2 space-x-reverse text-stone-300">
-                <Phone className="w-4 h-4 text-[#8e7046]" />
-                <span className="font-mono">19746</span>
-              </li>
-              <li className="flex items-center space-x-2 space-x-reverse text-stone-300">
-                <Mail className="w-4 h-4 text-[#8e7046]" />
-                <span className="font-mono">info@royalherbs.com</span>
-              </li>
-              <li className="flex items-start space-x-2 space-x-reverse text-stone-300">
-                <MapPin className="w-4 h-4 text-[#8e7046] mt-0.5 shrink-0" />
-                <span>{isAr ? 'الجيزة، مصر' : 'Giza, Egypt'}</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: About Royal */}
-          <div className="space-y-4">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              {isAr ? 'تابعنا' : 'Follow Us'}
-            </h4>
-            <p className="text-xs leading-relaxed text-stone-400">
-              {isAr 
-                ? 'شاي رويال أسوشيتس: تأسست عام ١٩٨٥ لتقديم أجود الأعشاب والمحاصيل الطبيعية الحرفية بطريقة مستدامة ومسؤولة بيئياً.'
-                : 'Royal Herbs Associates: Established in 1985, bringing you premium hand-crafted herbs sustainably and responsibly.'}
-            </p>
-            <div className="flex items-center space-x-3 space-x-reverse pt-2">
-              <span className="text-xs text-stone-400 font-bold uppercase">{isAr ? 'العربية' : 'Arabic Only'}</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="max-w-6xl mx-auto border-t border-white/5 mt-12 pt-6 text-center text-[10px] text-stone-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>© 1985-2026 ROYAL HERBS ASSOCIATES. ALL RIGHTS RESERVED.</span>
-          <span className="flex items-center space-x-1 space-x-reverse">
-            <span>{isAr ? 'صنع بكل حب واستدامة' : 'Sustainably Crafted in Egypt'}</span>
-          </span>
-        </div>
-      </footer>
+     
+      <SiteFooter onOpenPanel={onOpenPanel} activePanel="sustainability" />
     </motion.div>
   );
 }

@@ -1,13 +1,15 @@
 import { motion } from 'motion/react';
 import { X, Globe } from 'lucide-react';
-import { Language } from '../types';
+import { Language, ActivePanel } from '../types';
+import SiteFooter from './SiteFooter';
 
 interface FarmsStoryProps {
   lang: Language;
   onClose: () => void;
+  onOpenPanel: (panel: ActivePanel) => void;
 }
 
-export default function FarmsStory({ lang, onClose }: FarmsStoryProps) {
+export default function FarmsStory({ lang, onClose, onOpenPanel }: FarmsStoryProps) {
   const isAr = lang === 'ar';
 
   // Sourced images with correct timestamps
@@ -26,10 +28,10 @@ export default function FarmsStory({ lang, onClose }: FarmsStoryProps) {
       transition={{ type: 'spring', damping: 28, stiffness: 180 }}
     >
       {/* SECTION 1: OUR FARMS.. OUR STORY */}
-      <section id="farms-story-intro" className="relative w-full overflow-hidden pb-16">
+      <section id="farms-story-intro" className="relative w-full overflow-hidden pb-16 -mt-24 md:-mt-32">
         
         {/* Banner with Aerial View of the Farm */}
-        <div className="relative h-[320px] sm:h-[400px] md:h-[480px] w-full flex items-center justify-center">
+        <div className="relative h-[calc(320px+6rem)] sm:h-[calc(400px+6rem)] md:h-[calc(480px+8rem)] w-full flex items-center justify-center">
           <img
             src={bannerImg}
             alt="Royal Farms Aerial View"
@@ -203,6 +205,7 @@ export default function FarmsStory({ lang, onClose }: FarmsStoryProps) {
         </div>
       </section>
 
+      <SiteFooter onOpenPanel={onOpenPanel} activePanel="farms" />
     </motion.div>
   );
 }

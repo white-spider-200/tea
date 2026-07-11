@@ -5,11 +5,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { 
-  X, Mail, Phone, MapPin, Search, User, ShoppingBag, 
-  ChevronDown, Facebook, Instagram, Youtube, Linkedin, Check, Loader2 
-} from 'lucide-react';
+import { X, ChevronDown, Check, Loader2 } from 'lucide-react';
 import { Language, ActivePanel } from '../types';
+import SiteFooter from './SiteFooter';
 
 interface ContactPageProps {
   lang: Language;
@@ -26,6 +24,8 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
     name: '',
     title: '',
     email: '',
+    phone: '',
+    location: '',
     subject: '',
     message: ''
   });
@@ -33,6 +33,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
   const [captchaChecked, setCaptchaChecked] = useState(false);
   const [captchaLoading, setCaptchaLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState('');
 
   // Handle CAPTCHA checkbox click
@@ -45,25 +46,69 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
     }, 1200);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!captchaChecked) {
       setFormError(isAr ? 'يرجى تأكيد أنك لست برنامج روبوت أولاً.' : 'Please verify you are not a robot first.');
       return;
     }
+
     setFormError('');
-    setSubmitted(true);
-    setTimeout(() => {
-      // Reset form
+    setIsSubmitting(true);
+
+    const fullMessage = [
+      formData.title ? `${isAr ? 'اللقب' : 'Title'}: ${formData.title}` : '',
+      formData.subject ? `${isAr ? 'الموضوع' : 'Subject'}: ${formData.subject}` : '',
+      formData.message,
+    ]
+      .filter(Boolean)
+      .join('\n\n');
+
+    try {
+      const response = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          location: formData.location,
+          message: fullMessage,
+          isAr,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.error ||
+            (isAr ? 'فشل إرسال الرسالة. يرجى المحاولة لاحقاً.' : 'Failed to send message. Please try again.')
+        );
+      }
+
+      setSubmitted(true);
       setFormData({
         name: '',
         title: '',
         email: '',
+        phone: '',
+        location: '',
         subject: '',
-        message: ''
+        message: '',
       });
       setCaptchaChecked(false);
-    }, 4000);
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : isAr
+            ? 'عذراً، حدث خطأ أثناء إرسال رسالتك.'
+            : 'Sorry, an error occurred while sending your message.';
+      setFormError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -79,7 +124,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
   return (
     <motion.div
       id="contact-full-page"
-      className="fixed inset-0 z-30 overflow-y-auto bg-stone-100 text-stone-800 scrollbar-thin select-none pt-24 md:pt-32"
+      className="fixed inset-0 z-30 overflow-y-auto bg-stone-900 text-stone-800 scrollbar-thin select-none pt-24 md:pt-32"
       dir="rtl" // Force RTL to preserve the exact Arabic layout of the uploaded image
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -89,7 +134,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
       {/* 2. HEADER HERO BANNER (Orange flower field background) */}
       <section 
         id="contact-hero-banner"
-        className="relative h-[55vh] min-h-[350px] w-full flex items-center justify-center overflow-hidden bg-stone-900 text-white"
+        className="relative -mt-24 md:-mt-32 h-[calc(55vh+6rem)] md:h-[calc(55vh+8rem)] min-h-[calc(350px+6rem)] md:min-h-[calc(350px+8rem)] w-full flex items-center justify-center overflow-hidden bg-stone-900 text-white"
       >
         <div className="absolute inset-0 z-0">
           <img
@@ -132,90 +177,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
             </h2>
 
             {/* Contact details with icons aligned on the right */}
-            <div className="space-y-7 text-sm sm:text-base">
-              
-              {/* Phone */}
-              <div className="flex items-start space-x-4 space-x-reverse">
-                <div className="bg-white/10 p-3 rounded-full shrink-0">
-                  <Phone className="w-5 h-5 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-white/70 block text-xs">رقم الهاتف</span>
-                  <a 
-                    href="tel:19746" 
-                    className="font-mono font-bold text-lg sm:text-xl hover:underline"
-                  >
-                    هاتف : 19746
-                  </a>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-start space-x-4 space-x-reverse">
-                <div className="bg-white/10 p-3 rounded-full shrink-0">
-                  <Mail className="w-5 h-5 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-white/70 block text-xs">البريد الإلكتروني</span>
-                  <a 
-                    href="mailto:info@royalherbs.com" 
-                    className="font-mono font-bold text-base sm:text-lg hover:underline break-all"
-                  >
-                    info@royalherbs.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Address */}
-              <div className="flex items-start space-x-4 space-x-reverse">
-                <div className="bg-white/10 p-3 rounded-full shrink-0">
-                  <MapPin className="w-5 h-5 text-white mt-0.5" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-white/70 block text-xs">المقر الرئيسي</span>
-                  <p className="font-sans font-medium leading-relaxed">
-                    اوتومان جروب، اعشاب رويال ش.م.م، شبرامنت، الجيزة، مصر
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social media connections */}
-            <div className="pt-6 border-t border-white/20 flex items-center justify-start space-x-5 space-x-reverse">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="bg-white/10 hover:bg-white hover:text-[#f59e1d] p-3 rounded-full transition-all duration-300"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="bg-white/10 hover:bg-white hover:text-[#f59e1d] p-3 rounded-full transition-all duration-300"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="bg-white/10 hover:bg-white hover:text-[#f59e1d] p-3 rounded-full transition-all duration-300"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="bg-white/10 hover:bg-white hover:text-[#f59e1d] p-3 rounded-full transition-all duration-300"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-
+            
           </div>
         </div>
 
@@ -250,33 +212,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5 text-right">
               
-              {/* Row 1: Name & Title */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="الاسم"
-                    className="w-full px-4 py-3 bg-white border border-stone-200/50 text-stone-900 rounded-sm focus:ring-2 focus:ring-[#8e7046] focus:border-transparent outline-none text-right placeholder-stone-400 font-sans text-sm md:text-base shadow-2xs"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <input
-                    type="text"
-                    name="title"
-                    required
-                    value={formData.title}
-                    onChange={handleInputChange}
-                    placeholder="اللقب"
-                    className="w-full px-4 py-3 bg-white border border-stone-200/50 text-stone-900 rounded-sm focus:ring-2 focus:ring-[#8e7046] focus:border-transparent outline-none text-right placeholder-stone-400 font-sans text-sm md:text-base shadow-2xs"
-                  />
-                </div>
-              </div>
-
-              {/* Row 2: Email & Subject */}
+              {/* Row 1: Email & Phone */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <input
@@ -286,6 +222,33 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="البريد الإلكتروني"
+                    className="w-full px-4 py-3 bg-white border border-stone-200/50 text-stone-900 rounded-sm focus:ring-2 focus:ring-[#8e7046] focus:border-transparent outline-none text-right placeholder-stone-400 font-sans text-sm md:text-base shadow-2xs"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    disabled={isSubmitting}
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="رقم الهاتف"
+                    className="w-full px-4 py-3 bg-white border border-stone-200/50 text-stone-900 rounded-sm focus:ring-2 focus:ring-[#8e7046] focus:border-transparent outline-none text-right placeholder-stone-400 font-sans text-sm md:text-base shadow-2xs disabled:opacity-60"
+                  />
+                </div>
+              </div>
+
+              {/* Row 2: Name & Subject */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-1">
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="الاسم"
                     className="w-full px-4 py-3 bg-white border border-stone-200/50 text-stone-900 rounded-sm focus:ring-2 focus:ring-[#8e7046] focus:border-transparent outline-none text-right placeholder-stone-400 font-sans text-sm md:text-base shadow-2xs"
                   />
                 </div>
@@ -362,13 +325,15 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
               <div className="pt-3 flex justify-end">
                 <button
                   type="submit"
-                  className="bg-[#8e7046] hover:bg-[#725a38] text-white py-4 px-12 text-center uppercase tracking-widest font-bold text-sm transition-all shadow-md hover:shadow-lg rounded-sm cursor-pointer transform active:scale-98"
+                  disabled={isSubmitting}
+                  className="bg-[#8e7046] hover:bg-[#725a38] disabled:bg-stone-400 text-white py-4 px-12 text-center uppercase tracking-widest font-bold text-sm transition-all shadow-md hover:shadow-lg rounded-sm cursor-pointer transform active:scale-98 disabled:cursor-not-allowed"
                 >
-                  إرسال
+                  {isSubmitting ? 'جاري الإرسال...' : 'إرسال'}
                 </button>
               </div>
 
             </form>
+  
           ) : (
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
@@ -396,179 +361,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
         </div>
       </section>
 
-      {/* 5. IMMERSIVE BROWN BRAND FOOTER (Matching the footer columns) */}
-      <footer className="bg-[#4a3b2c] text-stone-200 py-16 px-6 sm:px-12 md:px-24 border-t border-stone-800">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-          
-          {/* Col 1: Explore */}
-          <div className="space-y-4 text-right">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              استكشف
-            </h4>
-            <ul className="space-y-3 text-xs sm:text-sm">
-              <li>
-                <button 
-                  onClick={() => {
-                    onOpenPanel(null);
-                    onClose();
-                  }} 
-                  className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full"
-                >
-                  الرئيسية
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    onClose();
-                    onOpenPanel('farms');
-                  }} 
-                  className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full"
-                >
-                  مزارعنا
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    onClose();
-                    onOpenPanel('shop');
-                  }} 
-                  className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full"
-                >
-                  منتجاتنا
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    onClose();
-                    onOpenPanel('subscription');
-                  }} 
-                  className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full"
-                >
-                  السوق الالكتروني
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    onClose();
-                    onOpenPanel('sustainability');
-                  }} 
-                  className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full"
-                >
-                  مسئوليتنا
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 2: Useful links */}
-          <div className="space-y-4 text-right">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              روابط مفيدة
-            </h4>
-            <ul className="space-y-3 text-xs sm:text-sm">
-              <li>
-                <button onClick={() => alert('قسم الأخبار قريباً!')} className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full">
-                  الأخبار
-                </button>
-              </li>
-              <li>
-                <button onClick={() => alert('بوابة التوظيف والوظائف قريباً!')} className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full">
-                  وظائف
-                </button>
-              </li>
-              <li>
-                <button onClick={() => {}} className="text-[#f59e1d] font-bold cursor-default text-right w-full">
-                  تواصل معانا
-                </button>
-              </li>
-              <li>
-                <button onClick={() => alert('بوابة الشركاء قيد الصيانة حالياً.')} className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full">
-                  عايز تبقى شريك لينا؟
-                </button>
-              </li>
-              <li>
-                <button onClick={() => alert('الأحكام والشروط قيد المراجعة القانونية.')} className="hover:text-[#f59e1d] transition-colors cursor-pointer text-right w-full">
-                  الأحكام والشروط
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 3: Stay in touch contact details */}
-          <div className="space-y-4 text-right">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              ابقى على تواصل
-            </h4>
-            <ul className="space-y-3.5 text-xs sm:text-sm">
-              <li className="flex items-center space-x-2.5 space-x-reverse text-stone-200 justify-start">
-                <Phone className="w-4.5 h-4.5 text-[#f59e1d] shrink-0" />
-                <a href="tel:19746" className="font-mono hover:underline">19746</a>
-              </li>
-              <li className="flex items-center space-x-2.5 space-x-reverse text-stone-200 justify-start">
-                <Mail className="w-4.5 h-4.5 text-[#f59e1d] shrink-0" />
-                <a href="mailto:info@royalherbs.com" className="font-mono hover:underline">info@royalherbs.com</a>
-              </li>
-              <li className="flex items-start space-x-2.5 space-x-reverse text-stone-200 justify-start">
-                <MapPin className="w-4.5 h-4.5 text-[#f59e1d] mt-0.5 shrink-0" />
-                <span className="leading-relaxed">اوتومان جروب، اعشاب رويال ش.م.م، شبرامنت، الجيزة، مصر</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Follow Us & Brand detail */}
-          <div className="space-y-4 text-right">
-            <h4 className="font-serif font-bold text-white text-base tracking-wider uppercase border-b border-white/10 pb-2">
-              تابعنا
-            </h4>
-            <p className="text-xs sm:text-sm leading-relaxed text-stone-300">
-              شاي رويال أسوشيتس: تأسست عام ١٩٨٥ لتقديم أجود الأعشاب والمحاصيل الطبيعية الحرفية بطريقة مستدامة ومسؤولة بيئياً ومجتمعياً.
-            </p>
-            
-            {/* Social icons row */}
-            <div className="flex items-center justify-start space-x-4 space-x-reverse pt-2 text-stone-200">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-[#f59e1d] transition-colors"><Facebook className="w-4 h-4" /></a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#f59e1d] transition-colors"><Instagram className="w-4 h-4" /></a>
-              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-[#f59e1d] transition-colors"><Youtube className="w-4 h-4" /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#f59e1d] transition-colors"><Linkedin className="w-4 h-4" /></a>
-            </div>
-
-            <div className="pt-4 flex items-center space-x-3 space-x-reverse">
-              <button 
-                onClick={() => {
-                  onOpenPanel(null);
-                  onClose();
-                }} 
-                className="text-stone-300 hover:text-white text-xs font-semibold underline"
-              >
-                العربية
-              </button>
-              <span className="text-stone-500">|</span>
-              <button 
-                onClick={() => {
-                  onOpenPanel(null);
-                  onClose();
-                }} 
-                className="text-stone-400 hover:text-white text-xs"
-              >
-                English
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-        {/* copyright subfooter */}
-        <div className="max-w-6xl mx-auto border-t border-white/5 mt-12 pt-6 text-center text-[11px] text-stone-400 font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>© 1985-2026 ROYAL HERBS ASSOCIATES. جميع الحقوق محفوظة.</span>
-          <span className="flex items-center space-x-1 space-x-reverse">
-            <span>صُنع بكل حب واستدامة في مصر</span>
-          </span>
-        </div>
-      </footer>
+      <SiteFooter onOpenPanel={onOpenPanel} activePanel="contact" />
 
     </motion.div>
   );

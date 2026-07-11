@@ -32,12 +32,11 @@ export interface CartItem {
   quantity: number;
 }
 
-export type ActivePanel = 'shop' | 'subscription' | 'about' | 'inspiration' | 'contact' | 'account' | 'search' | 'cart' | 'sustainability' | 'farms' | null;
+export type ActivePanel = 'shop' | 'about' | 'inspiration' | 'contact' | 'account' | 'search' | 'cart' | 'sustainability' | 'farms' | null;
 
 export interface TranslationSet {
   // Navigation
   shop: string;
-  subscription: string;
   about: string;
   inspiration: string;
   contact: string;
@@ -52,11 +51,6 @@ export interface TranslationSet {
   heroTitle: string;
   heroSubtitle: string;
   heroButton: string;
-  
-  // Badges
-  awardGold: string;
-  awardBronze: string;
-  awardYear: string;
   
   // Product details
   origin: string;
@@ -75,14 +69,11 @@ export interface TranslationSet {
   noResults: string;
   contactName: string;
   contactEmail: string;
+  contactPhone: string;
+  contactLocation: string;
   contactMessage: string;
   contactSubmit: string;
   contactSuccess: string;
-  subscribeTitle: string;
-  subscribeSubtitle: string;
-  subscribePlanMonthly: string;
-  subscribePlanPremium: string;
-  subscribeButton: string;
   accountTitle: string;
   accountSubtitle: string;
   accountLoyalty: string;

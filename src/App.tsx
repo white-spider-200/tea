@@ -9,17 +9,18 @@ import { CheckCircle, X, HelpCircle } from 'lucide-react';
 import { Language, ActivePanel, CartItem, TeaProduct } from './types';
 import { TRANSLATIONS } from './data';
 import Header from './components/Header';
-import AwardBadges from './components/AwardBadges';
 import ActivePanelDrawer from './components/ActivePanelDrawer';
 import ProductDetailModal from './components/ProductDetailModal';
 import UniqueFlavors from './components/UniqueFlavors';
+import PartnerLogos from './components/PartnerLogos';
 import FarmsStory from './components/FarmsStory';
 import Sustainability from './components/Sustainability';
 import ContactPage from './components/ContactPage';
 import ShopPage from './components/ShopPage';
+import SiteFooter from './components/SiteFooter';
 
 // Reference the generated background image as a static path
-const flatlayImage = '/src/assets/images/artisan_tea_flatlay_1783411234222.jpg';
+const heroVideo = '/src/assets/videos/2022__02__Home-Intro-Compressed.mp4';
 
 export default function App() {
   // Global States
@@ -30,7 +31,7 @@ export default function App() {
     const cleanPath = path.replace(/^\/|\/$/g, '');
     if (!cleanPath) return null;
     const validPanels: Exclude<ActivePanel, null>[] = [
-      'shop', 'subscription', 'about', 'inspiration', 'contact', 'account', 'search', 'cart', 'sustainability', 'farms'
+      'shop', 'about', 'inspiration', 'contact', 'account', 'search', 'cart', 'sustainability', 'farms'
     ];
     if (validPanels.includes(cleanPath as any)) {
       return cleanPath as ActivePanel;
@@ -124,9 +125,7 @@ export default function App() {
   // Dynamic overlays & layouts based on language alignment
   const textAlignmentClass = isAr ? 'text-right' : 'text-left';
   const flexAlignmentClass = isAr ? 'items-end' : 'items-start';
-  const overlayGradient = isAr
-    ? 'bg-gradient-to-l from-black/80 via-black/45 to-black/10'
-    : 'bg-gradient-to-r from-black/80 via-black/45 to-black/10';
+  const overlayGradient = 'bg-gradient-to-t from-black/90 via-black/50 to-black/30';
 
   return (
     <div
@@ -144,67 +143,68 @@ export default function App() {
       />
 
       {/* SECTION 1: THE IMPERIAL HERO LANDING */}
-      <section id="hero-section" className="relative h-screen w-full flex flex-col justify-between overflow-hidden">
-        {/* 1. IMMERSIVE HERO BACKGROUND PHOTO */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-stone-900">
-          <motion.img
-            src={flatlayImage}
-            alt="Artisan Tea Flatlay background"
-            className="w-full h-full object-cover opacity-90 scale-105"
-            initial={{ scale: 1.08, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.95 }}
-            transition={{ duration: 1.8, ease: 'easeOut' }}
-            referrerPolicy="no-referrer"
+      <section id="hero-section" className="relative h-screen w-full flex flex-col overflow-hidden">
+        {/* 1. IMMERSIVE HERO BACKGROUND VIDEO */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-stone-950">
+          <video
+            src={heroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover scale-[1.02]"
           />
-          {/* Dynamic Shadow Overlay ensuring premium text-to-background contrast */}
-          <div className={`absolute inset-0 z-10 transition-all duration-500 ${overlayGradient}`} />
-          {/* Smooth transition from dark hero image to the light UniqueFlavors background */}
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#fbf9f6] via-[#fbf9f6]/70 to-transparent z-15 pointer-events-none" />
+          {/* Cinematic overlay — heavier at bottom for text readability */}
+          <div className={`absolute inset-0 z-10 ${overlayGradient}`} />
+          {/* Subtle vignette for cinematic depth */}
+          <div className="absolute inset-0 z-11" style={{ boxShadow: 'inset 0 0 150px 60px rgba(0,0,0,0.4)' }} />
+          {/* Smooth transition to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#fbf9f6] via-[#fbf9f6]/60 to-transparent z-15 pointer-events-none" />
         </div>
 
-        {/* Padding placeholder for visual alignment */}
-        <div className="h-10 w-full" />
-
-        {/* 3. HERO CONTENT CONTAINER (Centered visually with offset padding for high-end aesthetic) */}
+        {/* HERO CONTENT — pushed to bottom-center for cinematic video feel */}
         <main
           id="hero-content"
-          className={`relative z-20 flex-1 max-w-7xl mx-auto w-full px-4 sm:px-8 flex flex-col justify-center ${flexAlignmentClass} ${textAlignmentClass} pt-28 pb-16`}
+          className={`relative z-20 flex-1 w-full px-6 sm:px-10 lg:px-20 flex flex-col justify-end ${isAr ? 'items-start' : 'items-end'} ${textAlignmentClass} pb-40 sm:pb-44`}
         >
-          <div className="max-w-2xl space-y-6 md:space-y-8">
-            
-            {/* Main Editorial Header Title */}
-            <motion.h1
+          <div className="space-y-5 md:space-y-6" style={{ maxWidth: '640px' }}>
+
+            {/* Main headline */}
+            <motion.h3
               id="hero-headline"
-              className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-white leading-[1.12] drop-shadow-sm"
-              initial={{ opacity: 0, y: 25 }}
+              className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-wide text-white leading-[1.1]"
+              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3)' }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+              transition={{ delay: 0.3, duration: 1 }}
             >
               {t.heroTitle}
-            </motion.h1>
+            </motion.h3>
+       
 
-            {/* Subtitle description with high legibility */}
+            {/* Subtitle */}
             <motion.p
               id="hero-subheading"
-              className="text-stone-200/90 font-sans font-light text-xs sm:text-sm md:text-base leading-relaxed md:max-w-md drop-shadow-xs"
+              className="text-white/80 font-sans font-light text-sm sm:text-base md:text-lg leading-relaxed max-w-md"
+              style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              transition={{ delay: 0.5, duration: 1 }}
             >
               {t.heroSubtitle}
             </motion.p>
 
-            {/* Call to Action Shop button */}
+            {/* CTA button */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="pt-2"
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="pt-1"
             >
               <button
                 id="hero-cta-btn"
                 onClick={() => setActivePanel('shop')}
-                className="group px-6 sm:px-9 py-3.5 sm:py-4 border border-white hover:border-tea-gold bg-transparent hover:bg-white hover:text-stone-950 transition-all duration-300 text-[11px] sm:text-[12px] font-bold uppercase tracking-[0.2em] text-white cursor-pointer hover:shadow-lg transform active:scale-95"
+                className="group px-8 sm:px-10 py-3.5 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white hover:text-stone-950 hover:border-white transition-all duration-300 text-[11px] sm:text-[12px] font-bold uppercase tracking-[0.2em] text-white cursor-pointer hover:shadow-xl transform active:scale-95"
               >
                 {t.heroButton}
               </button>
@@ -212,18 +212,16 @@ export default function App() {
           </div>
         </main>
 
-        {/* 4. FOOTER REGION: Hosting prestigous Awards badges */}
-        <footer
-          id="app-footer-bar"
-          className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-8 pb-8 flex flex-col items-center justify-center gap-6"
-        >
-          {/* Scalable overlapping Award Badges */}
-          <AwardBadges lang={language} />
-        </footer>
       </section>
 
       {/* SECTION 2: MAGNIFICENT INTERACTIVE UNIQUE FLAVORS CANNED SHOWCASE */}
       <UniqueFlavors lang={language} />
+
+      {/* SECTION 3: COMPANIES WE WORK WITH */}
+      <PartnerLogos lang={language} />
+
+      {/* SITE-WIDE FOOTER (home scroll) */}
+      <SiteFooter onOpenPanel={setActivePanel} activePanel={activePanel} />
 
       {/* 5. INTERACTIVE SIDE DRAWER PANELS (AnimatePresence handles slide exit) */}
       <AnimatePresence>
@@ -248,6 +246,7 @@ export default function App() {
           <Sustainability
             lang={language}
             onClose={() => setActivePanel(null)}
+            onOpenPanel={setActivePanel}
           />
         )}
       </AnimatePresence>
@@ -270,6 +269,7 @@ export default function App() {
           <FarmsStory
             lang={language}
             onClose={() => setActivePanel(null)}
+            onOpenPanel={setActivePanel}
           />
         )}
       </AnimatePresence>
@@ -282,6 +282,7 @@ export default function App() {
             onClose={() => setActivePanel(null)}
             onAddToCart={handleAddToCart}
             onOpenProductDetail={setSelectedProduct}
+            onOpenPanel={setActivePanel}
             cartCount={cartCount}
           />
         )}
@@ -305,12 +306,13 @@ export default function App() {
       {/* 7. CHECKOUT SUCCESS SIMULATION MODAL */}
       <AnimatePresence>
         {checkoutSuccess && (
-          <div id="checkout-success-modal" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
+          <div id="checkout-success-modal" className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
+
             <motion.div
-              className="bg-white rounded-2xl max-w-md w-full p-8 text-center shadow-2xl relative border border-stone-100 animate-fade-in"
-              initial={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-lg w-full max-w-xs p-5 shadow-lg text-center relative"
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: 'spring', damping: 25 }}
             >
               <button
@@ -319,33 +321,31 @@ export default function App() {
                   setCheckoutSuccess(false);
                   setCheckoutInfo(null);
                 }}
-                className={`absolute top-4 ${isAr ? 'left-4' : 'right-4'} text-stone-400 hover:text-stone-700 w-7 h-7 flex items-center justify-center rounded-full bg-stone-50 cursor-pointer`}
+                className="absolute top-2 right-2 text-stone-400 hover:text-stone-700 w-8 h-8 flex items-center justify-center rounded-full bg-stone-50 cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
-
-              <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto mb-4 stroke-[1.2]" />
-              <h3 className="font-serif text-xl font-medium text-stone-900 mb-2">
-                {isAr ? 'تم إرسال طلبك بنجاح!' : 'Order Placed Successfully!'}
-              </h3>
-              <p className="text-stone-500 text-xs md:text-sm leading-relaxed mb-4">
-                {isAr 
-                  ? 'تم استلام طلبك للمنتجات الفاخرة وسنتواصل معك قريباً لتأكيد الشحن.' 
-                  : 'Your order for premium, artisan teas has been submitted directly.'}
-              </p>
-
-              {checkoutInfo?.message && (
-                <div className="bg-stone-50 border border-stone-200/80 rounded-xl p-3.5 mb-6 text-[11px] text-stone-600 leading-normal text-left max-h-[140px] overflow-y-auto font-mono">
-                  <span className="font-semibold block text-stone-800 mb-1">
-                    {isAr ? '⚙️ حالة خادم البريد:' : '⚙️ Order Server Status:'}
-                  </span>
-                  {checkoutInfo.message}
-                  {checkoutInfo.recipient && (
-                    <div className="mt-1.5 pt-1.5 border-t border-stone-200/50 text-stone-500 font-sans">
-                      <strong>{isAr ? 'المرسل إليه:' : 'Target Recipient:'}</strong> {checkoutInfo.recipient}
-                    </div>
-                  )}
+              <div className="mb-2 flex justify-center">
+                <CheckCircle className="w-10 h-10 text-emerald-500" />
+              </div>
+              {isAr ? (
+                <div className="text-left" dir="ltr">
+                  <h3 className="font-semibold text-lg text-stone-900 mb-2">
+                    تم إرسال طلبك بنجاح!
+                  </h3>
+                  <p className="text-stone-600 text-sm mb-4">
+                    تم استلام طلبك للمنتجات الفاخرة وسنتواصل معك قريباً لتأكيد الشحن.
+                  </p>
                 </div>
+              ) : (
+                <>
+                  <h3 className="font-semibold text-lg text-stone-900 mb-2">
+                    Order Placed Successfully!
+                  </h3>
+                  <p className="text-stone-600 text-sm mb-4">
+                    Your order for premium, artisan teas has been submitted directly.
+                  </p>
+                </>
               )}
 
               <button
@@ -355,12 +355,13 @@ export default function App() {
                 }}
                 className="w-full py-3 rounded-lg bg-tea-charcoal text-white text-xs uppercase tracking-widest font-bold hover:bg-[#8e7046] transition-colors cursor-pointer"
               >
-                {isAr ? 'العودة للمتجر البطيء' : 'Return to Slow Brewing'}
+                {isAr ? 'العودة للمتجر ' : 'Return to Slow Brewing'}
               </button>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
+ 
     </div>
   );
 }
