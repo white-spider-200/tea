@@ -70,16 +70,13 @@ export default function SiteFooter({ onOpenPanel, activePanel = null }: SiteFoot
             <ul className="space-y-3.5 text-xs sm:text-sm">
               <li className="flex items-center space-x-2.5 space-x-reverse text-stone-200 justify-start">
                 <Phone className="w-4.5 h-4.5 text-[#f59e1d] shrink-0" />
-                <a href="tel:19746" className="font-mono hover:underline">19746</a>
+                <a href="tel:19746" className="font-mono hover:underline">0790000000+</a>
               </li>
               <li className="flex items-center space-x-2.5 space-x-reverse text-stone-200 justify-start">
                 <Mail className="w-4.5 h-4.5 text-[#f59e1d] shrink-0" />
                 <a href="mailto:info@royalherbs.com" className="font-mono hover:underline">info@royalherbs.com</a>
               </li>
-              <li className="flex items-start space-x-2.5 space-x-reverse text-stone-200 justify-start">
-                <MapPin className="w-4.5 h-4.5 text-[#f59e1d] mt-0.5 shrink-0" />
-                <span className="leading-relaxed">اوتومان جروب، اعشاب رويال ش.م.م، شبرامنت، الجيزة، مصر</span>
-              </li>
+          
             </ul>
           </div>
 

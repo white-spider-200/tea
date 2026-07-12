@@ -229,6 +229,7 @@ export default function App() {
           <ActivePanelDrawer
             panel={activePanel}
             onClose={() => setActivePanel(null)}
+            onOpenPanel={setActivePanel}
             lang={language}
             cartItems={cartItems}
             onUpdateQuantity={handleUpdateQuantity}

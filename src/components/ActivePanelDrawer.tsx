@@ -16,6 +16,7 @@ import BreathingRitual from './BreathingRitual';
 interface ActivePanelDrawerProps {
   panel: ActivePanel;
   onClose: () => void;
+  onOpenPanel: (panel: ActivePanel) => void;
   lang: Language;
   cartItems: CartItem[];
   onUpdateQuantity: (productId: string, delta: number) => void;
@@ -28,6 +29,7 @@ interface ActivePanelDrawerProps {
 export default function ActivePanelDrawer({
   panel,
   onClose,
+  onOpenPanel,
   lang,
   cartItems,
   onUpdateQuantity,
@@ -326,7 +328,7 @@ export default function ActivePanelDrawer({
                   <p className="text-stone-500 text-sm italic">{t.cartEmpty}</p>
                   <button
                     onClick={() => {
-                      onClose();
+                      onOpenPanel('shop');
                     }}
                     className="text-xs uppercase tracking-widest font-semibold text-tea-gold hover:text-tea-gold-dark mt-2 underline"
                   >

@@ -300,11 +300,13 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
       <div className="max-w-4xl mx-auto px-6 text-center space-y-6 relative z-20">
         
         {/* Hanging Tea Bag String from ceiling */}
-        <div className="flex flex-col items-center justify-center -mt-16 md:-mt-24 mb-6">
-          <div className="w-[1.5px] h-20 md:h-28 bg-[#8e7046]/25" />
-          <div className="w-12 h-14 rounded-md border-[2.5px] border-[#8e7046]/30 flex items-center justify-center bg-white/40 backdrop-blur-xs shadow-xs">
-            <div className="w-3 h-3 rounded-full bg-[#8e7046]/45" />
-          </div>
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-[1.5px] h-30 md:h-38 bg-[#8e7046]/65" />
+          <img
+            src="/src/assets/images/b7cd3927-c6a3-4da2-aa0f-3d54f9a3aa7b-removebg-preview(1).png"
+            alt="Royal Herbal Teas"
+            className="w-54 h-54"
+          />
         </div>
 
         {/* Brand label */}
