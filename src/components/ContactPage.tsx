@@ -165,38 +165,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
         </div>
       </section>
 
-      {/* 3. CONTACT INFO (Orange Box) & MAP (Split Grid) */}
-      <section id="info-map-section" className="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch bg-white">
-        
-        {/* Left: Contact Info Orange Box (Col span 5) */}
-        <div className="lg:col-span-5 bg-[#f59e1d] p-8 sm:p-12 md:p-16 flex flex-col justify-center text-white text-right">
-          <div className="max-w-md mx-auto lg:mx-0 w-full space-y-10">
-            
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-wide border-b border-white/20 pb-4">
-              الاتصال بنا
-            </h2>
-
-            {/* Contact details with icons aligned on the right */}
-            
-          </div>
-        </div>
-
-        {/* Right: Live Interactive Google Maps Embed (Col span 7) */}
-        <div className="lg:col-span-7 relative min-h-[350px] lg:min-h-auto w-full bg-stone-100 overflow-hidden">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.9150604169654!2d31.1834222!3d29.9329444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145847cd3ef396ab%3A0x8673f8ff52ff372a!2sRoyal%20Herbs!5e0!3m2!1sar!2seg!4v1783411234222"
-            width="100%"
-            height="100%"
-            style={{ border: 0, minHeight: '450px' }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="خريطة مقر رويال هيربس"
-            className="w-full h-full filter saturate-[0.85] contrast-[1.02]"
-          />
-        </div>
-
-      </section>
+     
 
       {/* 4. SEND US A MESSAGE FORM (Light lime background section) */}
       <section 
